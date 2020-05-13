@@ -1225,16 +1225,16 @@ function update() {
             enemies.push(new SlowerEnemy(10, 25, 3, 200));
         } else if (wave == 10){
             for (var i = 0; i < 20; i++){
-            enemies.push(new Enemy(15, 15, 0.5);
+            enemies.push(new Enemy(15, 15, 0.5));
             }
         } else if (wave == 11){
             for (var i = 0; i < 20; i++){
-            enemies.push(new SlowerEnemy(15, 15, 0.5);
+            enemies.push(new SlowerEnemy(15, 15, 0.5));
             }
         } else if (wave == 12){
             for (var i = 0; i < 20; i++){
-            enemies.push(new SlowerEnemy(15, 15, 0.5);
-            enemies.push(new Enemy(15, 15, 0.5);
+            enemies.push(new SlowerEnemy(15, 15, 0.5));
+            enemies.push(new Enemy(15, 15, 0.5));
             }
         } else if (wave == 13){
             enemies.push(new HomingEnemy(50, 25, 1.2));
