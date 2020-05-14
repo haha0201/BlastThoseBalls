@@ -1768,8 +1768,7 @@ function update() {
         }
     }
     if (keys[69]) {
-        enemies = [];
-        wave++
+        time = regularEnemySpawnRate - 1;
     }
     if (keys[186]) {
         upgradepoints++;
@@ -1949,29 +1948,33 @@ function update() {
             for (var i = 0; i < 12; i++){
             enemies.push(new HomingEnemy(25, 15, 0.9, 150));
             }
-            enemies.push(new Enemy(85, 32, 3.5));
+            enemies.push(new Enemy(85, 32, 2.5));
         } else if (wave == 22){
             for (var i = 0; i < 9; i++){
             enemies.push(new HomingEnemy(25, 15, 0.9, 150));
             enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
             }
-            enemies.push(new Enemy(85, 32, 3.5));
+            enemies.push(new Enemy(85, 32, 2.5));
         } else if (wave == 23){
-            for (var i = 0; i < 11; i++){
+            for (var i = 0; i < 19; i++){
             enemies.push(new HomingEnemy(25, 15, 0.9, 150));
-            enemies.push(new SlowerEnemy(25, 15, 0.9, 150));
             }
-            enemies.push(new SlowerEnemy(85, 32, 3.5, 200));
-            enemies.push(new Enemy(85, 32, 3.5, 200));
-        } else if (wave == 24){
-            for (var i = 0; i < 11; i++){
-            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            for (var i = 0; i < 5; i++){
             enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
             }
-            enemies.push(new Enemy(90, 30, 4));
-            enemies.push(new Enemy(120, 35, 3.5));
-            enemies.push(new Enemy(150, 40, 3));
-            enemies.push(new Enemy(180, 45, 2.5));
+            enemies.push(new SlowerEnemy(85, 32, 3, 200));
+            enemies.push(new Enemy(85, 32, 3, 200));
+        } else if (wave == 24){
+            for (var i = 0; i < 19; i++){
+            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            }
+            for (var i = 0; i < 5; i++){
+            enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
+            }
+            enemies.push(new Enemy(80, 30, 3.5));
+            enemies.push(new Enemy(110, 35, 3));
+            enemies.push(new Enemy(140, 40, 2.5));
+            enemies.push(new Enemy(170, 45, 2));
             
         } else if (wave == 25){
             for (var i = 0; i < 11; i++){
@@ -1991,12 +1994,12 @@ function update() {
             
         } else if (wave == 27){
             for (var i = 25; i--;){
-            enemies.push(new Enemy(10, 15, 2));
+            enemies.push(new Enemy(20, 15, 2.5));
             }
             
         }  else if (wave == 28){
-            for (var i = 30; i--;){
-            enemies.push(new HomingEnemy(10, 15, 2, 150));
+            for (var i = 32; i--;){
+            enemies.push(new HomingEnemy(20, 15, 2, 150));
             }
             
         }  else if (wave == 29){
