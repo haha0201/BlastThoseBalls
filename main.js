@@ -1235,16 +1235,21 @@ function update() {
             enemies.push(new SlowerEnemy(10, 25, 3, 200));
         } else if (wave == 10){
             for (var i = 0; i < 20; i++){
-            enemies.push(new Enemy(15, 15, 0.5));
+            enemies.push(new Enemy(11, 15, 0.5));
             }
         } else if (wave == 11){
-            for (var i = 0; i < 20; i++){
-            enemies.push(new SlowerEnemy(15, 15, 0.5, 200));
+            for (var i = 0; i < 5; i++){
+            enemies.push(new SlowerEnemy(11, 15, 0.5, 200));
+            }
+            for (var i = 0; i < 15; i++){
+            enemies.push(new Enemy(11, 15, 0.5));
             }
         } else if (wave == 12){
-            for (var i = 0; i < 20; i++){
-            enemies.push(new SlowerEnemy(25, 25, 1, 200));
-            enemies.push(new Enemy(25, 25, 1));
+            for (var i = 0; i < 30; i++){
+            enemies.push(new Enemy(22, 25, 1));
+            }
+            for (var i = 0; i < 10; i++){
+            enemies.push(new SlowerEnemy(22, 25, 1, 200));
             }
         } else if (wave == 13){
             for (var i = 0; i < 50; i++){
@@ -1256,14 +1261,14 @@ function update() {
             }
             enemies.push(new Enemy(50, 15, 3));
         } else if (wave == 15){
-            for (var i = 0; i < 10; i++){
+            for (var i = 0; i < 5; i++){
             enemies.push(new SlowerEnemy(25, 15, 1.5, 150));
             }
-            for (var i = 0; i < 30; i++){
+            for (var i = 0; i < 25; i++){
             enemies.push(new Enemy(25, 15, 0.5));
             }
-            enemies.push(new Enemy(60, 25, 4));
-            enemies.push(new Enemy(60, 25, 4));
+            enemies.push(new Enemy(60, 25, 3));
+            enemies.push(new Enemy(60, 25, 3));
         } else if (wave == 18){
             enemies.push(new Enemy(1200, 50, 0.3));
         } else if (wave == 21){
