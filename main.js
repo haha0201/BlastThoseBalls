@@ -24,8 +24,8 @@ var bulletSpeed = 5,
     wave = 1,
     chosen = 0;
 
-var needed = [1, 2, 3, 5, 8, 13, 21, 34, 0];
-var tokenneeded = [0, 0, 0, 0, 0, 0, 1, 1, 100000000];
+var needed = [1, 2, 3, 4, 6, 8, 11, 15, 10000];
+var tokenneeded = [0, 0, 0, 0, 0, 0, 1, 1, 100];
 
 
 
