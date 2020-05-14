@@ -1995,7 +1995,7 @@ function update() {
             
         } else if (wave == 27){
             for (var i = 30; i--;){
-            enemies.push(new Enemy(20, 15, 4));
+            enemies.push(new Enemy(20, 15, 3));
             }
             
         }  else if (wave == 28){
