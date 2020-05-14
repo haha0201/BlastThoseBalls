@@ -718,7 +718,7 @@ function update() {
     
     
     //Slowing Amount
-    slowingamount = (Math.pow(0.96, attributes[6]))/2 + 35;
+    slowingamount = (Math.pow(0.96, attributes[6]))/2 + 0.35;
     
     
     
