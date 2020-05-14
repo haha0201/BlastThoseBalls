@@ -1315,15 +1315,48 @@ function update() {
             enemies.push(new HomingEnemy(25, 15, 0.9, 150));
             }
             enemies.push(new Enemy(85, 32, 3.5));
+        } else if (wave == 22){
+            for (var i = 0; i < 9; i++){
+            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            enemies.push(new SlowingEnemy(25, 15, 0.9, 150));
+            }
+            enemies.push(new SlowingEnemy(85, 32, 3.5, 200));
+        } else if (wave == 23){
+            for (var i = 0; i < 11; i++){
+            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            enemies.push(new SlowingEnemy(25, 15, 0.9, 150));
+            }
+            enemies.push(new SlowingEnemy(85, 32, 3.5, 200));
+            enemies.push(new Enemy(85, 32, 3.5, 200));
         } else if (wave == 24){
-            enemies.push(new Enemy(160, 30, 4));
-            enemies.push(new Enemy(190, 35, 3.5));
-            enemies.push(new Enemy(220, 40, 3));
-            enemies.push(new Enemy(250, 45, 2.5));
+            for (var i = 0; i < 11; i++){
+            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            enemies.push(new SlowingEnemy(25, 15, 0.9, 200));
+            }
+            enemies.push(new Enemy(90, 30, 4));
+            enemies.push(new Enemy(120, 35, 3.5));
+            enemies.push(new Enemy(150, 40, 3));
+            enemies.push(new Enemy(180, 45, 2.5));
+            
+        } else if (wave == 25){
+            for (var i = 0; i < 11; i++){
+            enemies.push(new SlowingEnemy(25, 15, 0.9, 200));
+            }
+            for (var i = 0; i < 11; i++){
+            enemies.push(new Enemy(15, 10, 4));
+            }
+            
+        } else if (wave == 26){
+            for (var i = 0; i < 11; i++){
+            enemies.push(new SlowingEnemy(25, 15, 0.9, 200));
+            }
+            for (var i = 0; i < 11; i++){
+            enemies.push(new HomingEnemy(15, 10, 1.5, 150));
+            }
             
         } else if (wave == 27){
             for (var i = 20; i--;){
-            enemies.push(new Enemy(10, 15, 0.5));
+            enemies.push(new Enemy(10, 15, 2));
             }
             
         }  else if (wave == 30){
