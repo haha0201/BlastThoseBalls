@@ -1967,22 +1967,22 @@ function update() {
             enemies.push(new Enemy(85, 32, 3, 200));
         } else if (wave == 24){
             for (var i = 0; i < 19; i++){
-            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            enemies.push(new HomingEnemy(25, 15, 0.6, 150));
             }
             for (var i = 0; i < 5; i++){
-            enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
+            enemies.push(new SlowerEnemy(25, 15, 0.6, 200));
             }
-            enemies.push(new Enemy(80, 30, 3.5));
-            enemies.push(new Enemy(110, 35, 3));
-            enemies.push(new Enemy(140, 40, 2.5));
-            enemies.push(new Enemy(170, 45, 2));
+            enemies.push(new Enemy(80, 30, 3));
+            enemies.push(new Enemy(110, 35, 2.5));
+            enemies.push(new Enemy(140, 40, 2));
+            enemies.push(new Enemy(170, 45, 1.5));
             
         } else if (wave == 25){
             for (var i = 0; i < 11; i++){
             enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
             }
             for (var i = 0; i < 11; i++){
-            enemies.push(new Enemy(15, 10, 4));
+            enemies.push(new Enemy(15, 10, 3));
             }
             
         } else if (wave == 26){
@@ -1994,34 +1994,34 @@ function update() {
             }
             
         } else if (wave == 27){
-            for (var i = 25; i--;){
-            enemies.push(new Enemy(20, 15, 2.5));
+            for (var i = 30; i--;){
+            enemies.push(new Enemy(20, 15, 4));
             }
             
         }  else if (wave == 28){
             for (var i = 32; i--;){
-            enemies.push(new HomingEnemy(20, 15, 2, 150));
+            enemies.push(new HomingEnemy(20, 15, 1, 150));
             }
             
         }  else if (wave == 29){
             for (var i = 10; i--;){
-            enemies.push(new SlowerEnemy(10, 15, 0.6, 200));
+            enemies.push(new SlowerEnemy(10, 15, 0.4, 200));
             }
             for (var i = 10; i--;){
-            enemies.push(new HomingEnemy(10, 15, 1.2, 150));
+            enemies.push(new HomingEnemy(10, 15, 0.4, 150));
             }
             for (var i = 15; i--;){
-            enemies.push(new Enemy(10, 15, 3));
+            enemies.push(new Enemy(10, 15, 2));
             }
         } else if (wave == 30){
             for (var i = 10; i--;){
-            enemies.push(new SlowerEnemy(10, 15, 1, 200));
+            enemies.push(new SlowerEnemy(10, 15, 1.2, 200));
             }
             for (var i = 15; i--;){
-            enemies.push(new HomingEnemy(20, 15, 2, 150));
+            enemies.push(new HomingEnemy(20, 15, 0.6, 150));
             }
             for (var i = 20; i--;){
-            enemies.push(new Enemy(30, 15, 3.5));
+            enemies.push(new Enemy(30, 15, 2.4));
             }
         } else if (wave == 33){
         enemies.push(new HomingEnemy(80, 25, 1.5, 150));
