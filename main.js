@@ -97,6 +97,7 @@ function SniperEnemy(hp, size, speed, reload, bulletDamage, bulletSpeed, bulletS
     this.bulletDamage = bulletDamage;
     this.bulletSpeed = bulletSpeed;
     this.timer = 0;
+    this.spawntimer = 0;
     this.bulletSize = bulletSize
     
 }
@@ -112,6 +113,7 @@ SniperEnemy.prototype.draw = function() {
     } else if (this.timer < this.reload){
         this.timer++
     }
+    if (this.spawntimer > 50){
     if (this.goingright == 1){
         this.x+=this.speedx;
     }
@@ -137,7 +139,7 @@ SniperEnemy.prototype.draw = function() {
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-
+    }
     for (var i = 0; i < bullets.length; i++) {
          var distx = bullets[i].x - this.x;
          var disty = bullets[i].y - this.y;
@@ -180,6 +182,7 @@ SniperEnemy.prototype.draw = function() {
     
     this.speedx = this.basespeedx * this.speed;
     this.speedy = this.basespeedy * this.speed;
+    this.spawntimer++;
     
 };
 
@@ -196,6 +199,7 @@ function HomingEnemy(hp, size, speed, range){
    this.basespeedy = this.speedy;
    this.speedx*=this.speed;
    this.speedy*=this.speed;
+   this.spawntimer = 0;
    this.goingright = Math.round(Math.random());
    this.goingup = Math.round(Math.random());
    this.delete = 0;
@@ -225,11 +229,14 @@ HomingEnemy.prototype.draw = function(){
     }
   this.distance = Math.sqrt(Math.pow(Math.abs(this.x - x), 2) + Math.pow(Math.abs(this.y - y), 2));
   if (this.distance <= this.range){
+    if (this.spawntimer > 50){
     this.x = this.x - (this.speed/this.distance) * slowingamount*(this.x - x);
     this.y = this.y - (this.speed/this.distance) * slowingamount*(this.y - y);
+    }
   }
     
   else{
+    if (this.spawntimer > 50){
       if (this.goingright == 1){
         this.x+=this.speedx;
     }
@@ -255,7 +262,7 @@ HomingEnemy.prototype.draw = function(){
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-
+    }
   }
   if (this.x - this.size < 100){
     this.x = 100+this.size
@@ -309,6 +316,8 @@ HomingEnemy.prototype.draw = function(){
     
     this.speedx = this.basespeedx * this.speed;
     this.speedy = this.basespeedy * this.speed;
+
+    this.spawntimer++;
 }
 
 Borderball.prototype.draw = function() {
@@ -383,6 +392,7 @@ function Enemy(hp, size, speed) {
     this.speedy*=this.speed;
     this.goingright = Math.round(Math.random());
     this.goingup = Math.round(Math.random());
+    this.spawntimer = 0;
     this.delete = 0;
 }
 Enemy.prototype.draw = function() {
@@ -391,6 +401,7 @@ Enemy.prototype.draw = function() {
       this.speedy = this.basespeedy * this.speed * slowingamount;
     }
     
+    if (this.spawntimer > 50){
     if (this.goingright == 1){
         this.x+=this.speedx;
     }
@@ -416,7 +427,7 @@ Enemy.prototype.draw = function() {
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-
+    }
     for (var i = 0; i < bullets.length; i++) {
          var distx = bullets[i].x - this.x;
          var disty = bullets[i].y - this.y;
@@ -457,6 +468,8 @@ Enemy.prototype.draw = function() {
     
     this.speedx = this.basespeedx * this.speed;
     this.speedy = this.basespeedy * this.speed;
+
+    this.spawntimer++;
 };
 
 function SlowerEnemy(hp, size, speed, range) {
@@ -473,6 +486,7 @@ function SlowerEnemy(hp, size, speed, range) {
     this.basespeedy = this.speedy;
     this.speedx*=this.speed;
     this.speedy*=this.speed;
+    this.spawntimer = 0;
     this.goingright = Math.round(Math.random());
     this.goingup = Math.round(Math.random());
     this.delete = 0;
@@ -482,6 +496,7 @@ SlowerEnemy.prototype.draw = function() {
       this.speedx = this.basespeedx * this.speed * slowingamount;
       this.speedy = this.basespeedy * this.speed * slowingamount;
     }
+    if (this.spawntimer > 50){
     if (this.goingright == 1){
         this.x+=this.speedx;
     }
@@ -507,7 +522,7 @@ SlowerEnemy.prototype.draw = function() {
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-
+    }
     for (var i = 0; i < bullets.length; i++) {
          var distx = bullets[i].x - this.x;
          var disty = bullets[i].y - this.y;
@@ -525,7 +540,9 @@ SlowerEnemy.prototype.draw = function() {
       }
     }
     if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.range){
+      if (this.spawntimer > 50){
       slowed = 1;
+      }
     }
 
 
@@ -557,6 +574,8 @@ SlowerEnemy.prototype.draw = function() {
     }
     this.speedx = this.basespeedx * this.speed;
     this.speedy = this.basespeedy * this.speed;
+
+    this.spawntimer++;
 };
 
 function ShieldEnemy(hp, size, speed, shieldTime, noShieldTime) {
