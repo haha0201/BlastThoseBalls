@@ -2038,10 +2038,10 @@ function update() {
         }
         } else if (wave == 60){
         for (var i = 2; i--;){
-            enemies.push(new SniperEnemy(500, 35, 2, 15, 25, 7, 3));
+            enemies.push(new SniperEnemy(500, 35, 1, 25, 30, 5, 5));
         }
-        for (var i = 10; i--;){
-            enemies.push(new Enemy(30, 25, 2.5));
+        for (var i = 25; i--;){
+            enemies.push(new Enemy(40, 15, 1));
         }
         }
         else{
