@@ -1282,12 +1282,20 @@ function update() {
             for (var i = 0; i < 8; i++){
             enemies.push(new SlowerEnemy(25, 15, 1.5, 150));
             }
-        } else if (wave == 21){
-            enemies.push(new Enemy(80, 45, 1.5));
-            enemies.push(new Enemy(80, 40, 2));
-            enemies.push(new Enemy(80, 35, 2.5));
+        } else if (wave == 19){
+            for (var i = 0; i < 8; i++){
+            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            }
+        } else if (wave == 20){
+            for (var i = 0; i < 8; i++){
+            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            }
             enemies.push(new Enemy(80, 30, 3));
-            
+        } else if (wave == 21){
+            for (var i = 0; i < 12; i++){
+            enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            }
+            enemies.push(new Enemy(85, 32, 3.5));
         } else if (wave == 24){
             enemies.push(new Enemy(160, 30, 4));
             enemies.push(new Enemy(190, 35, 3.5));
