@@ -1454,7 +1454,7 @@ function update() {
     ctx.fillStyle = "white";
     ctx.fill();
     
-    if (keys[81] && clicknumberkey === true){
+    if (keys[69] && clicknumberkey === true){
         autofire ++;
         clicknumberkey = 0;
     }
@@ -1767,8 +1767,9 @@ function update() {
           velX = -speed/2;
         }
     }
-    if (keys[69]) {
+    if (keys[81]) {
         time = regularEnemySpawnRate - 1;
+        enemies = [];
     }
     if (keys[186]) {
         upgradepoints++;
