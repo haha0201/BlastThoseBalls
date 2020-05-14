@@ -1355,12 +1355,27 @@ function update() {
             }
             
         } else if (wave == 27){
-            for (var i = 20; i--;){
+            for (var i = 25; i--;){
             enemies.push(new Enemy(10, 15, 2));
             }
             
+        }  else if (wave == 28){
+            for (var i = 30; i--;){
+            enemies.push(new HomingEnemy(10, 15, 2, 150));
+            }
+            
+        }  else if (wave == 29){
+            for (var i = 10; i--;){
+            enemies.push(new SlowerEnemy(10, 15, 0.6, 200));
+            }
+            for (var i = 10; i--;){
+            enemies.push(new HomingEnemy(10, 15, 1.2, 150));
+            }
+            for (var i = 15; i--;){
+            enemies.push(new Enemy(10, 15, 3));
+            }
         }  else if (wave == 30){
-            enemies.push(new Enemy(30, 15, 0.5));
+            enemies.push(new SlowerEnemy(150, 15, 0.5, 500));
             enemies.push(new Enemy(30, 15, 0.5));
             enemies.push(new Enemy(30, 15, 0.5));
             enemies.push(new Enemy(30, 15, 0.5));
