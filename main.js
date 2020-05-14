@@ -2023,12 +2023,23 @@ function update() {
             for (var i = 20; i--;){
             enemies.push(new Enemy(30, 15, 2.4));
             }
+        } else if (wave == 31){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(80, 25, 0.5, 70, 25, 6, 5));
+        } else if (wave == 32){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(80, 25, 0.5, 70, 25, 6, 5));
+        enemies.push(new SniperEnemy(80, 25, 0.5, 70, 25, 6, 5));
         } else if (wave == 33){
-        enemies.push(new HomingEnemy(80, 25, 1.5, 150));
-        enemies.push(new HomingEnemy(80, 25, 1.5, 150));
-        } else if (wave == 36){
-        enemies.push(new HomingEnemy(300, 35, 1.5, 150));
-        enemies.push(new HomingEnemy(300, 35, 1.5, 150));
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(80, 25, 0.5, 70, 25, 6, 5));
+        for (var i = 10; i--;){
+            enemies.push(new SlowerEnemy(10, 15, 1.2, 200));
+        }
+        } else if (wave == 60){
+        for (var i = 5; i--;){
+            enemies.push(new SniperEnemy(140, 50, 1.5, 10, 15, 6, 10));
+        }
         }
         else{
             
