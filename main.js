@@ -525,7 +525,8 @@ HomingEnemy.prototype.draw = function(){
     this.x = 100+this.size
   } else if (this.x + this.size > 600){
     this.x = 600 - this.size
-  } else if (this.y - this.size < 0){
+  }
+  if (this.y - this.size < 0){
     this.y = 0+this.size
   } else if (this.y + this.size > 500){
     this.y = 500 - this.size
