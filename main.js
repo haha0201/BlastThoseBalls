@@ -2066,6 +2066,20 @@ function update() {
         for (var i = 13; i--;){
             enemies.push(new Enemy(10, 15, 2));
         }
+        } else if (wave == 38){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        for (var i = 20; i--;){
+            enemies.push(new HomingEnemy(10, 15, 1));
+        }
+        } else if (wave == 39){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        for (var i = 5; i--;){
+            enemies.push(new SniperEnemy(10, 15, 1, 120, 15, 6, 4));
+        }
         } else if (wave == 57){
         for (var i = 3; i--;){
             enemies.push(new SniperEnemy(800, 35, 1, 50, 30, 5, 5));
