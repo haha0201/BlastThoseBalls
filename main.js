@@ -88,70 +88,131 @@ function SniperEnemy(hp, size, speed, reload, bulletDamage, bulletSpeed, bulletS
   this.maxhp = hp;
     this.hp = this.maxhp;
     this.size = size;
+    this.variation = getRandomInt(1, 3);
    this.x = getRandomInt(1, 3);
     if (this.x == 1 && x - 100 > this.size * 2){
       this.x = 100 + this.size;
+      if (this.variation == 1){
+      this.x += getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x > this.size * 2){
       this.x = 600-this.size;
+      if (this.variation == 1){
+      this.x -= getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100 + this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     this.y = getRandomInt(1, 3);
     if (this.y == 1 && y > this.size * 2){
       this.y = this.size;
+      if (this.variation == 2){
+      this.y += getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y > this.size * 2){
       this.y = 500-this.size;
+      if (this.variation == 2){
+      this.y -= getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     this.speedx = Math.random() + 0.5;
@@ -261,70 +322,131 @@ function HomingEnemy(hp, size, speed, range){
    this.maxhp = hp;
    this.hp = this.maxhp;
    this.size = size;
-  this.x = getRandomInt(1, 3);
+      this.variation = getRandomInt(1, 3);
+   this.x = getRandomInt(1, 3);
     if (this.x == 1 && x - 100 > this.size * 2){
       this.x = 100 + this.size;
+      if (this.variation == 1){
+      this.x += getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x > this.size * 2){
       this.x = 600-this.size;
+      if (this.variation == 1){
+      this.x -= getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100 + this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     this.y = getRandomInt(1, 3);
     if (this.y == 1 && y > this.size * 2){
       this.y = this.size;
+      if (this.variation == 2){
+      this.y += getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y > this.size * 2){
       this.y = 500-this.size;
+      if (this.variation == 2){
+      this.y -= getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
    this.speedx = Math.random() + 0.5;
@@ -516,70 +638,131 @@ function Enemy(hp, size, speed) {
     this.maxhp = hp;
     this.hp = this.maxhp;
     this.size = size;
-    this.x = getRandomInt(1, 3);
+        this.variation = getRandomInt(1, 3);
+   this.x = getRandomInt(1, 3);
     if (this.x == 1 && x - 100 > this.size * 2){
       this.x = 100 + this.size;
+      if (this.variation == 1){
+      this.x += getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x > this.size * 2){
       this.x = 600-this.size;
+      if (this.variation == 1){
+      this.x -= getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100 + this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     this.y = getRandomInt(1, 3);
     if (this.y == 1 && y > this.size * 2){
       this.y = this.size;
+      if (this.variation == 2){
+      this.y += getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y > this.size * 2){
       this.y = 500-this.size;
+      if (this.variation == 2){
+      this.y -= getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     this.speedx = Math.random() + 0.5;
@@ -676,70 +859,131 @@ function SlowerEnemy(hp, size, speed, range) {
     this.range = range;
     this.hp = this.maxhp;
     this.size = size;
+       this.variation = getRandomInt(1, 3);
    this.x = getRandomInt(1, 3);
     if (this.x == 1 && x - 100 > this.size * 2){
       this.x = 100 + this.size;
+      if (this.variation == 1){
+      this.x += getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x > this.size * 2){
       this.x = 600-this.size;
+      if (this.variation == 1){
+      this.x -= getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100 + this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     this.y = getRandomInt(1, 3);
     if (this.y == 1 && y > this.size * 2){
       this.y = this.size;
+      if (this.variation == 2){
+      this.y += getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y > this.size * 2){
       this.y = 500-this.size;
+      if (this.variation == 2){
+      this.y -= getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     this.speedx = Math.random() + 0.5;
@@ -845,70 +1089,131 @@ function ShieldEnemy(hp, size, speed, shieldTime, noShieldTime) {
     this.maxhp = hp;
     this.hp = this.maxhp;
     this.size = size;
-    this.x = getRandomInt(1, 3);
+        this.variation = getRandomInt(1, 3);
+   this.x = getRandomInt(1, 3);
     if (this.x == 1 && x - 100 > this.size * 2){
       this.x = 100 + this.size;
+      if (this.variation == 1){
+      this.x += getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x > this.size * 2){
       this.x = 600-this.size;
+      if (this.variation == 1){
+      this.x -= getRandomInt(0, 350-this.size)
+      }
     } else if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100 + this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 1 && x - 100 <= this.size * 2){
       if (600 - x > this.size * 2){
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       }
     }
     if (this.x == 2 && 600 - x <= this.size * 2){
       if (x - 100 > this.size * 2){
         this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
       } else {
         this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
       }
     }
     this.y = getRandomInt(1, 3);
     if (this.y == 1 && y > this.size * 2){
       this.y = this.size;
+      if (this.variation == 2){
+      this.y += getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y > this.size * 2){
       this.y = 500-this.size;
+      if (this.variation == 2){
+      this.y -= getRandomInt(0, 250-this.size)
+      }
     } else if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 1 && y <= this.size * 2){
       if (500 - y > this.size * 2){
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       }
     }
     if (this.y == 2 && 500 - y <= this.size * 2){
       if (y > this.size * 2){
         this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
       } else {
         this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
       }
     }
     this.speedx = Math.random() + 0.5;
