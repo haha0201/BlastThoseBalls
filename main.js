@@ -2037,8 +2037,11 @@ function update() {
             enemies.push(new SlowerEnemy(10, 15, 1.2, 200));
         }
         } else if (wave == 60){
-        for (var i = 5; i--;){
-            enemies.push(new SniperEnemy(140, 50, 1.5, 10, 15, 6, 10));
+        for (var i = 2; i--;){
+            enemies.push(new SniperEnemy(500, 35, 2, 15, 25, 7, 3));
+        }
+        for (var i = 10; i--;){
+            enemies.push(new Enemy(30, 25, 2.5));
         }
         }
         else{
