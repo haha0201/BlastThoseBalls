@@ -2080,6 +2080,46 @@ function update() {
         for (var i = 5; i--;){
             enemies.push(new SniperEnemy(10, 15, 1, 120, 15, 6, 4));
         }
+        } else if (wave == 40){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        for (var i = 9; i--;){
+            enemies.push(new SniperEnemy(10, 15, 1, 120, 15, 6, 4));
+        }
+        } else if (wave == 41){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
+        for (var i = 12; i--;){
+            enemies.push(new SniperEnemy(15, 15, 1, 120, 15, 6, 4));
+        }
+        } else if (wave == 42){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new SniperEnemy(150, 25, 0.5, 70, 25, 6, 5));
+        enemies.push(new SniperEnemy(150, 25, 0.5, 70, 25, 6, 5));
+        for (var i = 12; i--;){
+            enemies.push(new SniperEnemy(30, 15, 1.2, 120, 15, 6, 4));
+        }
+        } else if (wave == 43){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        for (var i = 5; i--;){
+            enemies.push(new SniperEnemy(70, 25, 1.5, 70, 25, 6, 5));
+        }
+        } else if (wave == 44){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        for (var i = 5; i--;){
+            enemies.push(new SniperEnemy(70, 25, 1.6, 70, 25, 6, 5));
+            enemies.push(new SlowerEnemy(30, 15, 1, 200));
+            
+        }
+        } else if (wave == 45){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        for (var i = 4; i--;){
+            enemies.push(new SniperEnemy(70, 25, 1.4, 70, 25, 6, 5));
+            enemies.push(new SlowerEnemy(30, 15, 1, 200));
+            enemies.push(new Enemy(30, 15, 1.9, 200));
+        }
         } else if (wave == 57){
         for (var i = 3; i--;){
             enemies.push(new SniperEnemy(800, 35, 1, 50, 30, 5, 5));
