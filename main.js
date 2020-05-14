@@ -2036,6 +2036,18 @@ function update() {
         for (var i = 10; i--;){
             enemies.push(new SlowerEnemy(10, 15, 1.2, 200));
         }
+        } else if (wave == 57){
+        for (var i = 3; i--;){
+            enemies.push(new SniperEnemy(800, 35, 1, 50, 30, 5, 5));
+        }
+        } else if (wave == 58){
+        for (var i = 3; i--;){
+            enemies.push(new SniperEnemy(800, 35, 1, 40, 30, 5, 5));
+        }
+        } else if (wave == 59){
+        for (var i = 2; i--;){
+            enemies.push(new SniperEnemy(800, 35, 1, 30, 30, 5, 5));
+        }
         } else if (wave == 60){
         for (var i = 2; i--;){
             enemies.push(new SniperEnemy(800, 35, 1, 20, 30, 5, 5));
