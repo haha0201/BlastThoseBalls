@@ -46,6 +46,13 @@ var time = 0;
 var mouseX = 0,
     mouseY = 0;
 
+
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
 function SniperBullet(bulletx, bullety, bulletDamage, bulletSpeed, bulletSize, dirX, dirY){
     this.damage = bulletDamage;
     this.speed = bulletSpeed;
@@ -81,8 +88,72 @@ function SniperEnemy(hp, size, speed, reload, bulletDamage, bulletSpeed, bulletS
   this.maxhp = hp;
     this.hp = this.maxhp;
     this.size = size;
-    this.x = 250 + Math.random()*(225-this.size);
-    this.y = 250 + Math.random()*(125-this.size);
+   this.x = getRandomInt(1, 3);
+    if (this.x == 1 && x - 100 > this.size * 2){
+      this.x = 100 + this.size;
+    } else if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x > this.size * 2){
+      this.x = 600-this.size;
+    } else if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100 + this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100+this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    this.y = getRandomInt(1, 3);
+    if (this.y == 1 && y > this.size * 2){
+      this.y = this.size;
+    } else if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y > this.size * 2){
+      this.y = 500-this.size;
+    } else if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
+    if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
     this.speedx = Math.random() + 0.5;
     this.speedy = Math.random() + 0.5;
     this.speed = speed;
@@ -107,7 +178,7 @@ SniperEnemy.prototype.draw = function() {
       this.speedx = this.basespeedx * this.speed * slowingamount;
       this.speedy = this.basespeedy * this.speed * slowingamount;
     }
-    if (this.timer >= this.reload){
+    if (this.timer >= this.reload && this.spawntimer > 50){
         enemies.push(new SniperBullet(this.x, this.y, this.bulletDamage, this.bulletSpeed, this.bulletSize, 0, 0));
         this.timer = 0;
     } else if (this.timer < this.reload){
@@ -126,7 +197,7 @@ SniperEnemy.prototype.draw = function() {
     else{
         this.y+=this.speedy;
     }
-    
+    }
     if (this.x>600-this.size){
         this.goingright = 0;
     }
@@ -139,7 +210,7 @@ SniperEnemy.prototype.draw = function() {
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-    }
+    
     for (var i = 0; i < bullets.length; i++) {
          var distx = bullets[i].x - this.x;
          var disty = bullets[i].y - this.y;
@@ -190,8 +261,72 @@ function HomingEnemy(hp, size, speed, range){
    this.maxhp = hp;
    this.hp = this.maxhp;
    this.size = size;
-   this.x = 250 + Math.random()*(225-this.size);
-   this.y = 250 + Math.random()*(125-this.size);
+  this.x = getRandomInt(1, 3);
+    if (this.x == 1 && x - 100 > this.size * 2){
+      this.x = 100 + this.size;
+    } else if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x > this.size * 2){
+      this.x = 600-this.size;
+    } else if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100 + this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100+this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    this.y = getRandomInt(1, 3);
+    if (this.y == 1 && y > this.size * 2){
+      this.y = this.size;
+    } else if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y > this.size * 2){
+      this.y = 500-this.size;
+    } else if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
+    if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
    this.speedx = Math.random() + 0.5;
    this.speedy = Math.random() + 0.5;
    this.speed = speed;
@@ -249,7 +384,7 @@ HomingEnemy.prototype.draw = function(){
     else{
         this.y+=this.speedy;
     }
-    
+    }
     if (this.x>600-this.size){
         this.goingright = 0;
     }
@@ -262,7 +397,7 @@ HomingEnemy.prototype.draw = function(){
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-    }
+    
   }
   if (this.x - this.size < 100){
     this.x = 100+this.size
@@ -381,8 +516,72 @@ function Enemy(hp, size, speed) {
     this.maxhp = hp;
     this.hp = this.maxhp;
     this.size = size;
-    this.x = 250 + Math.random()*(225-this.size);
-    this.y = 250 + Math.random()*(125-this.size);
+    this.x = getRandomInt(1, 3);
+    if (this.x == 1 && x - 100 > this.size * 2){
+      this.x = 100 + this.size;
+    } else if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x > this.size * 2){
+      this.x = 600-this.size;
+    } else if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100 + this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100+this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    this.y = getRandomInt(1, 3);
+    if (this.y == 1 && y > this.size * 2){
+      this.y = this.size;
+    } else if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y > this.size * 2){
+      this.y = 500-this.size;
+    } else if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
+    if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
     this.speedx = Math.random() + 0.5;
     this.speedy = Math.random() + 0.5;
     this.speed = speed;
@@ -414,7 +613,7 @@ Enemy.prototype.draw = function() {
     else{
         this.y+=this.speedy;
     }
-    
+    }
     if (this.x>600-this.size){
         this.goingright = 0;
     }
@@ -427,7 +626,7 @@ Enemy.prototype.draw = function() {
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-    }
+    
     for (var i = 0; i < bullets.length; i++) {
          var distx = bullets[i].x - this.x;
          var disty = bullets[i].y - this.y;
@@ -477,8 +676,72 @@ function SlowerEnemy(hp, size, speed, range) {
     this.range = range;
     this.hp = this.maxhp;
     this.size = size;
-    this.x = 250 + Math.random()*(225-this.size);
-    this.y = 250 + Math.random()*(125-this.size);
+   this.x = getRandomInt(1, 3);
+    if (this.x == 1 && x - 100 > this.size * 2){
+      this.x = 100 + this.size;
+    } else if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x > this.size * 2){
+      this.x = 600-this.size;
+    } else if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100 + this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100+this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    this.y = getRandomInt(1, 3);
+    if (this.y == 1 && y > this.size * 2){
+      this.y = this.size;
+    } else if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y > this.size * 2){
+      this.y = 500-this.size;
+    } else if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
+    if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
     this.speedx = Math.random() + 0.5;
     this.speedy = Math.random() + 0.5;
     this.speed = speed;
@@ -509,7 +772,7 @@ SlowerEnemy.prototype.draw = function() {
     else{
         this.y+=this.speedy;
     }
-    
+    }
     if (this.x>600-this.size){
         this.goingright = 0;
     }
@@ -522,7 +785,7 @@ SlowerEnemy.prototype.draw = function() {
     if (this.y<0+this.size){
         this.goingup = 0;
     }
-    }
+    
     for (var i = 0; i < bullets.length; i++) {
          var distx = bullets[i].x - this.x;
          var disty = bullets[i].y - this.y;
@@ -582,8 +845,72 @@ function ShieldEnemy(hp, size, speed, shieldTime, noShieldTime) {
     this.maxhp = hp;
     this.hp = this.maxhp;
     this.size = size;
-    this.x = 250 + Math.random()*(225-this.size);
-    this.y = 250 + Math.random()*(125-this.size);
+    this.x = getRandomInt(1, 3);
+    if (this.x == 1 && x - 100 > this.size * 2){
+      this.x = 100 + this.size;
+    } else if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x > this.size * 2){
+      this.x = 600-this.size;
+    } else if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100 + this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+      } else {
+        this.x = 100+this.size;
+      }
+    }
+    if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100+this.size;
+      } else {
+        this.x = 600-this.size;
+      }
+    }
+    this.y = getRandomInt(1, 3);
+    if (this.y == 1 && y > this.size * 2){
+      this.y = this.size;
+    } else if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y > this.size * 2){
+      this.y = 500-this.size;
+    } else if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
+    if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+      } else {
+        this.y = this.size;
+      }
+    }
+    if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+      } else {
+        this.y = 500-this.size;
+      }
+    }
     this.speedx = Math.random() + 0.5;
     this.speedy = Math.random() + 0.5;
     this.speed = speed;
@@ -594,6 +921,7 @@ function ShieldEnemy(hp, size, speed, shieldTime, noShieldTime) {
     this.goingright = Math.round(Math.random());
     this.goingup = Math.round(Math.random());
     this.timer = 0;
+    this.spawntimer = 0;
     this.shieldTime = shieldTime;
     this.noShieldTime = noShieldTime;
     this.shield = 0;
@@ -620,7 +948,7 @@ ShieldEnemy.prototype.draw = function() {
       this.speedy = this.basespeedy * this.speed * slowingamount;
     }
     
-    
+    if (this.spawntimer > 50){
     if (this.goingright == 1){
         this.x+=this.speedx;
     }
@@ -633,7 +961,7 @@ ShieldEnemy.prototype.draw = function() {
     else{
         this.y+=this.speedy;
     }
-    
+    }
     if (this.x>600-this.size){
         this.goingright = 0;
     }
@@ -698,6 +1026,8 @@ ShieldEnemy.prototype.draw = function() {
     
     this.speedx = this.basespeedx * this.speed;
     this.speedy = this.basespeedy * this.speed;
+
+    this.spawntimer++;
 };
 
 canvas.addEventListener("click", function(event){
