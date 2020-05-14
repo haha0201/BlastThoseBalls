@@ -1316,21 +1316,22 @@ function update() {
             }
             enemies.push(new Enemy(85, 32, 3.5));
         } else if (wave == 22){
-            for (var i = 0; i < 12; i++){
+            for (var i = 0; i < 9; i++){
             enemies.push(new HomingEnemy(25, 15, 0.9, 150));
+            enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
             }
             enemies.push(new Enemy(85, 32, 3.5));
         } else if (wave == 23){
             for (var i = 0; i < 11; i++){
             enemies.push(new HomingEnemy(25, 15, 0.9, 150));
-            enemies.push(new SlowingEnemy(25, 15, 0.9, 150));
+            enemies.push(new SlowerEnemy(25, 15, 0.9, 150));
             }
-            enemies.push(new SlowingEnemy(85, 32, 3.5, 200));
+            enemies.push(new SlowerEnemy(85, 32, 3.5, 200));
             enemies.push(new Enemy(85, 32, 3.5, 200));
         } else if (wave == 24){
             for (var i = 0; i < 11; i++){
             enemies.push(new HomingEnemy(25, 15, 0.9, 150));
-            enemies.push(new SlowingEnemy(25, 15, 0.9, 200));
+            enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
             }
             enemies.push(new Enemy(90, 30, 4));
             enemies.push(new Enemy(120, 35, 3.5));
@@ -1339,7 +1340,7 @@ function update() {
             
         } else if (wave == 25){
             for (var i = 0; i < 11; i++){
-            enemies.push(new SlowingEnemy(25, 15, 0.9, 200));
+            enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
             }
             for (var i = 0; i < 11; i++){
             enemies.push(new Enemy(15, 10, 4));
@@ -1347,7 +1348,7 @@ function update() {
             
         } else if (wave == 26){
             for (var i = 0; i < 11; i++){
-            enemies.push(new SlowingEnemy(25, 15, 0.9, 200));
+            enemies.push(new SlowerEnemy(25, 15, 0.9, 200));
             }
             for (var i = 0; i < 11; i++){
             enemies.push(new HomingEnemy(15, 10, 1.5, 150));
