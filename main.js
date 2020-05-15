@@ -69,7 +69,7 @@ function SniperBullet(bulletx, bullety, bulletDamage, bulletSpeed, bulletSize, d
 SniperBullet.prototype.draw = function(){
     this.x -= this.dirX
     this.y -= this.dirY
-    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= this.size+7){
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= this.size+playersize){
         hp -= this.damage;
         this.delete = 1;
     }
@@ -285,7 +285,7 @@ RadiatorEnemy.prototype.draw = function() {
          }
     }
     
-    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size){
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
       hp -= this.speed;
       if (hp <= 0){
         hp = 0;
@@ -363,7 +363,7 @@ function RadiatorBullet(bulletx, bullety, bulletDamage, bulletNumber, totalBulle
 RadiatorBullet.prototype.draw = function(){
     this.x -= this.dirX
     this.y -= this.dirY
-    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 14){
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 6 + playersize){
         hp -= this.damage;
         this.delete = 1;
     }
@@ -578,7 +578,7 @@ SniperEnemy.prototype.draw = function() {
          }
     }
     
-    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size){
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
       hp -= this.speed;
       if (hp <= 0){
         hp = 0;
@@ -839,7 +839,7 @@ HomingEnemy.prototype.draw = function(){
          }
     }
     
-    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size){
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
       hp -= this.speed;
       if (hp <= 0){
         hp = 0;
@@ -897,7 +897,7 @@ Borderball.prototype.draw = function() {
     this.y = this.y + this.speed
   }
 
-  if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size){
+  if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
       this.damage = Math.sqrt(this.speed * wave);
       if (this.damage > 10){
         this.damage = 10;
@@ -1117,7 +1117,7 @@ Enemy.prototype.draw = function() {
          }
     }
     
-    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size){
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
       hp -= this.speed;
       if (hp <= 0){
         hp = 0;
@@ -1337,7 +1337,7 @@ SlowerEnemy.prototype.draw = function() {
          }
     }
     
-    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size){
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
       hp -= this.speed;
       if (hp <= 0){
         hp = 0;
@@ -1589,7 +1589,7 @@ ShieldEnemy.prototype.draw = function() {
          }
     }
     
-    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size){
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
       hp -= this.speed;
       if (hp <= 0){
         hp = 0;
