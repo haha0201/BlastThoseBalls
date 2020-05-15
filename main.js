@@ -3057,7 +3057,7 @@ function update() {
           enemies.push(new LiquidEnemy(280, 35, 1));
           enemies.push(new LiquidEnemy(280, 35, 1));
           enemies.push(new LiquidEnemy(280, 35, 1));
-          enemies.push(new ShieldEnemy(280, 35, 1, 60, 60));
+          enemies.push(new ShieldEnemy(280, 35, 1, 40, 60));
         }else if (wave == 72){
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
@@ -3129,7 +3129,23 @@ function update() {
           for (var i = 1; i--;){
           enemies.push(new ShieldEnemy(80, 25, 1.2, 60, 40));
           }
-        }
+        }else if (wave == 95){
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 20, 1.2, 60, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 25, 1.2, 40, 40));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 20, 1.2, 40, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 25, 1.2, 60, 40));
+          }
+          enemies.push(new SniperEnemy(400, 40, 1.5, 22, 30, 5, 5));
+          enemies.push(new SlowerEnemy(30, 15, 1, 200));
+          enemies.push(new SlowerEnemy(30, 15, 1, 200));
+          enemies.push(new SlowerEnemy(30, 15, 1, 200));
         else{
             
         //If we didn't define any waves, then it goes back to automatic spawning.
