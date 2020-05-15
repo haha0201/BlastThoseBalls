@@ -813,7 +813,7 @@ ExploderEnemy.prototype.draw = function() {
 
 
     ctx.beginPath();
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "lightorange";
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
 
@@ -824,7 +824,7 @@ ExploderEnemy.prototype.draw = function() {
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size*7/9, 0, Math.PI * 2);
-    ctx.fillStyle = "orange";
+    ctx.fillStyle = "lightorange";
     ctx.fill();
 
 
@@ -908,6 +908,8 @@ ExploderBullet.prototype.draw = function(){
   ctx.fillStyle = "orange";
   ctx.arc(this.x, this.y, 6, 0, Math.PI * 2);
   ctx.fill();
+    
+  if (this.x > 600 || this.x < 0 || this.y > 500 || this.y < 0){this.delete = 1;}
 }
 
 function HomingEnemy(hp, size, speed, range){
@@ -2714,7 +2716,19 @@ function update() {
         }
         } else if (wave == 46){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
-        enemies.push(new ExploderEnemy(300, 35, 1, 50));
+        enemies.push(new ExploderEnemy(300, 50, 1, 50));
+        } else if (wave == 47){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(300, 35, 1.4, 50));
+        enemies.push(new SniperEnemy(300, 35, 1.4, 70, 25, 6, 5));
+        } else if (wave == 48){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(300, 35, 1.7, 50));
+        enemies.push(new SniperEnemy(300, 35, 1.7, 70, 25, 6, 5));
+        enemies.push(new ExploderEnemy(300, 35, 1.7, 50));
+        enemies.push(new SniperEnemy(300, 35, 1.7, 70, 25, 6, 5));
+        enemies.push(new ExploderEnemy(300, 35, 1.7, 50));
+        enemies.push(new SniperEnemy(300, 35, 1.7, 70, 25, 6, 5));
         } else if (wave == 57){
         for (var i = 3; i--;){
             enemies.push(new SniperEnemy(800, 35, 1, 50, 30, 5, 5));
