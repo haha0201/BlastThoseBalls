@@ -1652,18 +1652,18 @@ LiquidEnemy.prototype.draw = function() {
     
 
     ctx.beginPath();
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "navy";
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
     
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size*8/9, 0, Math.PI * 2 * this.hp/this.maxhp);
-    ctx.fillStyle = "grey";
+    ctx.fillStyle = "lightskyblue";
     ctx.fill();
     
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size*7/9, 0, Math.PI * 2);
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "navy";
     ctx.fill();
     
     
