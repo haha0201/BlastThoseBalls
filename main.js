@@ -2725,6 +2725,24 @@ function update() {
         enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
         enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
         enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
+        } else if (wave == 49){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(500, 40, 1, 50));
+        } else if (wave == 50){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(600, 40, 1, 40));
+        } else if (wave == 51){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(700, 40, 1, 35));
+        } else if (wave == 52){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(800, 40, 1, 30));
+        } else if (wave == 53){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(900, 40, 1, 25));
+        } else if (wave == 54){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(1000, 40, 1, 20));
         } else if (wave == 57){
         for (var i = 3; i--;){
             enemies.push(new SniperEnemy(800, 35, 1, 50, 30, 5, 5));
