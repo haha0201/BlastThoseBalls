@@ -2385,14 +2385,14 @@ function update() {
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
         enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
         enemies.push(new SniperEnemy(90, 25, 0.5, 70, 25, 6, 5));
-        for (var i = 12; i--;){
+        for (var i = 10; i--;){
             enemies.push(new SniperEnemy(15, 15, 1, 120, 15, 6, 4));
         }
         } else if (wave == 42){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
         enemies.push(new SniperEnemy(150, 25, 0.5, 70, 25, 6, 5));
         enemies.push(new SniperEnemy(150, 25, 0.5, 70, 25, 6, 5));
-        for (var i = 12; i--;){
+        for (var i = 10; i--;){
             enemies.push(new SniperEnemy(30, 15, 1.2, 120, 15, 6, 4));
         }
         } else if (wave == 43){
