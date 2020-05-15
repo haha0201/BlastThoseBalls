@@ -2743,26 +2743,40 @@ function update() {
         } else if (wave == 54){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
         enemies.push(new ExploderEnemy(1500, 40, 1.7, 16));
+        } else if (wave == 55){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(200, 20, 2, 50));
+        enemies.push(new ExploderEnemy(200, 20, 2, 50));
+        for (var i = 0; i < 11; i++){
+            enemies.push(new Enemy(15, 10, 2));
+        }
+        } else if (wave == 56){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new ExploderEnemy(200, 20, 2, 50));
+        enemies.push(new ExploderEnemy(200, 20, 2, 50));
+        for (var i = 0; i < 11; i++){
+            enemies.push(new HomingEnemy(15, 10, 1.5, 150));
+        }
         } else if (wave == 57){
         for (var i = 3; i--;){
-            enemies.push(new SniperEnemy(400, 35, 1, 50, 30, 5, 5));
+            enemies.push(new SniperEnemy(100, 35, 1, 60, 30, 5, 5));
         }
-        enemies.push(new ExploderEnemy(900, 35, 1, 50));
+        enemies.push(new ExploderEnemy(100, 35, 1, 60));
         } else if (wave == 58){
         for (var i = 3; i--;){
-            enemies.push(new SniperEnemy(400, 35, 1, 40, 30, 5, 5));
+            enemies.push(new SniperEnemy(150, 35, 1, 50, 30, 5, 5));
          
         }
-        enemies.push(new ExploderEnemy(900, 35, 1, 40));
+        enemies.push(new ExploderEnemy(150, 35, 1, 60));
         } else if (wave == 59){
         for (var i = 2; i--;){
-            enemies.push(new SniperEnemy(500, 35, 1, 30, 30, 5, 5));
+            enemies.push(new SniperEnemy(200, 35, 1, 40, 30, 5, 5));
         }
-        enemies.push(new ExploderEnemy(900, 35, 1, 30));
+        enemies.push(new ExploderEnemy(200, 35, 1, 50));
         } else if (wave == 60){
         for (var i = 2; i--;){
-            enemies.push(new SniperEnemy(500, 40, 1.5, 22, 30, 5, 5));
-            enemies.push(new ExploderEnemy(1000, 40, 1.5, 22));
+            enemies.push(new SniperEnemy(400, 40, 1.5, 22, 30, 5, 5));
+            enemies.push(new ExploderEnemy(400, 40, 1.5, 22));
         }
         
         } else if (wave == 61){
