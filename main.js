@@ -67,7 +67,7 @@ function SniperBullet(bulletx, bullety, bulletDamage, bulletSpeed, bulletSize, d
 SniperBullet.prototype.draw = function(){
     this.x -= this.dirX
     this.y -= this.dirY
-    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= this.size-7){
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= this.size+7){
         hp -= this.damage;
         this.delete = 1;
     }
@@ -361,7 +361,7 @@ function RadiatorBullet(bulletx, bullety, bulletDamage, bulletNumber, totalBulle
 RadiatorBullet.prototype.draw = function(){
     this.x -= this.dirX
     this.y -= this.dirY
-    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 0){
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 14){
         hp -= this.damage;
         this.delete = 1;
     }
