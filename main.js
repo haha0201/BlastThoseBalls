@@ -2196,10 +2196,10 @@ function update() {
             enemies.push(new Enemy(11, 15, 0.5));
             }
         } else if (wave == 12){
-            for (var i = 0; i < 30; i++){
-            enemies.push(new Enemy(22, 25, 1));
+            for (var i = 0; i < 25; i++){
+            enemies.push(new Enemy(22, 25, 0.8));
             }
-            for (var i = 0; i < 10; i++){
+            for (var i = 0; i < 7; i++){
             enemies.push(new SlowerEnemy(22, 25, 1, 200));
             }
         } else if (wave == 13){
