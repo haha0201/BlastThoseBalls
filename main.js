@@ -67,7 +67,7 @@ function SniperBullet(bulletx, bullety, bulletDamage, bulletSpeed, bulletSize, d
 SniperBullet.prototype.draw = function(){
     this.x -= this.dirX
     this.y -= this.dirY
-    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= this.size){
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= this.size-7){
         hp -= this.damage;
         this.delete = 1;
     }
@@ -361,7 +361,7 @@ function RadiatorBullet(bulletx, bullety, bulletDamage, bulletNumber, totalBulle
 RadiatorBullet.prototype.draw = function(){
     this.x -= this.dirX
     this.y -= this.dirY
-    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 5){
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 0){
         hp -= this.damage;
         this.delete = 1;
     }
@@ -370,11 +370,11 @@ RadiatorBullet.prototype.draw = function(){
     }
     ctx.beginPath();
     ctx.fillStyle = "black";
-    ctx.arc(this.x, this.y, 5, 0, Math.PI * 2);
+    ctx.arc(this.x, this.y, 7, 0, Math.PI * 2);
     ctx.fill();
     ctx.beginPath();
     ctx.fillStyle = "crimson";
-    ctx.arc(this.x, this.y, 4, 0, Math.PI * 2);
+    ctx.arc(this.x, this.y, 6, 0, Math.PI * 2);
     ctx.fill();
 }
 
