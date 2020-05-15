@@ -3146,6 +3146,24 @@ function update() {
           enemies.push(new SlowerEnemy(30, 15, 1, 200));
           enemies.push(new SlowerEnemy(30, 15, 1, 200));
           enemies.push(new SlowerEnemy(30, 15, 1, 200));
+        }else if (wave == 96){
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(300, 40, 1.2, 60, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(300, 35, 1.2, 40, 40));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(300, 40, 1.2, 40, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(300, 35, 1.2, 60, 40));
+          }
+          for (var i = 2; i--;){
+          enemies.push(new SlowerEnemy(30, 15, 1, 200));
+          enemies.push(new SniperEnemy(15, 35, 1, 50, 30, 5, 5));
+          }
+          enemies.push(new ExploderEnemy(400, 40, 0.2, 20));
         }
         else{
             
