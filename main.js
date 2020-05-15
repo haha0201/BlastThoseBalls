@@ -2793,15 +2793,15 @@ function update() {
           }
         } else if (wave == 64){
           for (var i = 11; i--;){
-          enemies.push(new ShieldEnemy(100, 35, 1.2, 60, 60));
+          enemies.push(new ShieldEnemy(90, 35, 1.2, 60, 60));
           }
         } else if (wave == 65){
           for (var i = 15; i--;){
-          enemies.push(new ShieldEnemy(100, 35, 1.2, 60, 60));
+          enemies.push(new ShieldEnemy(80, 35, 1.2, 60, 60));
           }
         } else if (wave == 66){
-          for (var i = 24; i--;){
-          enemies.push(new ShieldEnemy(100, 35, 1.2, 60, 60));
+          for (var i = 20; i--;){
+          enemies.push(new ShieldEnemy(70, 35, 1.2, 60, 60));
           }
           enemies.push(new ShieldEnemy(30, 35, 1.2, 110, 5));
         }
