@@ -2433,10 +2433,10 @@ function update() {
         }
         } else if (wave == 60){
         for (var i = 2; i--;){
-            enemies.push(new SniperEnemy(800, 35, 1, 20, 30, 5, 5));
+            enemies.push(new SniperEnemy(600, 35, 1, 20, 30, 5, 5));
         }
-        for (var i = 35; i--;){
-            enemies.push(new Enemy(60, 15, 1));
+        for (var i = 30; i--;){
+            enemies.push(new Enemy(50, 15, 1));
         }
         }
         else{
