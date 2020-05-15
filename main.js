@@ -2723,7 +2723,7 @@ function update() {
         } else if (wave == 48){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
         enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
-        enemies.push(new ExpoderEnemy(300, 35, 1.7, 60));
+        enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
         enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
         } else if (wave == 49){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
