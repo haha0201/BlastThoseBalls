@@ -3017,7 +3017,7 @@ function update() {
           }
         } else if (wave == 62){
           for (var i = 2; i--;){
-          enemies.push(new ShieldEnemy(100, 35, 1.2, 60, 60));
+          enemies.push(new ShieldEnemy(100, 35, 1.2, 60/i, 60/i));
           }
         } else if (wave == 63){
           for (var i = 3; i--;){
