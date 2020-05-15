@@ -2765,6 +2765,8 @@ function update() {
             enemies.push(new ExploderEnemy(1000, 40, 1.5, 22));
         }
         
+        } else if (wave == 61){
+          enemies.push(new ShieldEnemy(100, 35, 1.2, 60, 60));
         }
         else{
             
