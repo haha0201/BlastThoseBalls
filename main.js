@@ -27,8 +27,8 @@ var bulletSpeed = 5,
     chosen = 0,
     slowingamount = 1;
 
-var needed = [1, 2, 3, 4, 6, 8, 11, 15, 10000];
-var tokenneeded = [0, 0, 0, 0, 0, 0, 1, 1, 100];
+var needed = [1, 2, 3, 4, 6, 8, 11, 15, 90, 180, 360, 720, 1440, 2880, 5760];
+var tokenneeded = [0, 0, 0, 0, 0, 0, 1, 1, 6, 12, 24, 48, 96, 192, 384];
 
 
 
@@ -2562,48 +2562,62 @@ function update() {
     }
 
     if (attributes[0]>5){
+        for (var i = 50; i--;){
         ctx.beginPath();
-        ctx.arc(30, 110, 12.5, 12.5, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[0]]);
-        ctx.fillStyle =  "rgba(219, 223, 255, 1)";
-        ctx.fill();
+        ctx.arc(30, 110, 12.5 - i/4, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[0]]);
+        ctx.strokeStyle = "rgba(219, 223, 255, 1)";
+        ctx.stroke();
+        }
     }
     if (attributes[1]>5){
+        for (var i = 50; i--;){
         ctx.beginPath();
-        ctx.arc(70, 150, 12.5, 12.5, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[1]]);
-        ctx.fillStyle =  "rgba(219, 223, 255, 1)";
-        ctx.fill();
+        ctx.arc(70, 150, 12.5 - i/4, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[1]]);
+        ctx.strokeStyle = "rgba(219, 223, 255, 1)";
+        ctx.stroke();
+        }
+
     }
     if (attributes[2]>5){
+        for (var i = 50; i--;){
         ctx.beginPath();
-        ctx.arc(30, 190, 12.5, 12.5, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[2]]);
-        ctx.fillStyle =  "rgba(219, 223, 255, 1)";
-        ctx.fill();
+        ctx.arc(30, 190, 12.5 - i/4, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[2]]);
+        ctx.strokeStyle = "rgba(219, 223, 255, 1)";
+        ctx.stroke();
+        }
     }
     if (attributes[3]>5){
+        for (var i = 50; i--;){
         ctx.beginPath();
-        ctx.arc(70, 230, 12.5, 12.5, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[3]]);
-        ctx.fillStyle =  "rgba(219, 223, 255, 1)";
-        ctx.fill();
+        ctx.arc(70, 230, 12.5 - i/4, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[3]]);
+        ctx.strokeStyle = "rgba(219, 223, 255, 1)";
+        ctx.stroke();
+        }
     }
     if (attributes[4]>5){
+        for (var i = 50; i--;){
         ctx.beginPath();
-        ctx.arc(30, 270, 12.5, 12.5, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[4]]);
-        ctx.fillStyle =  "rgba(219, 223, 255, 1)";
-        ctx.fill();
+        ctx.arc(30, 270, 12.5 - i/4, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[4]]);
+        ctx.strokeStyle = "rgba(219, 223, 255, 1)";
+        ctx.stroke();
+        }
     }
     if (attributes[5]>5){
+        for (var i = 50; i--;){
         ctx.beginPath();
-        ctx.arc(70, 310, 12.5, 12.5, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[5]]);
-        ctx.fillStyle =  "rgba(219, 223, 255, 1)";
-        ctx.fill();
+        ctx.arc(70, 310, 12.5 - i/4, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[5]]);
+        ctx.strokeStyle = "rgba(219, 223, 255, 1)";
+        ctx.stroke();
+        }
     }
     if (attributes[6]>5){
+        for (var i = 50; i--;){
         ctx.beginPath();
-        ctx.arc(30, 350, 12.5, 12.5, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[6]]);
-        ctx.fillStyle =  "rgba(219, 223, 255, 1)";
-        ctx.fill();
+        ctx.arc(30, 350, 12.5 - i/4, 0, 2 * Math.PI * bosstokens/tokenneeded[attributes[6]]);
+        ctx.strokeStyle = "rgba(219, 223, 255, 1)";
+        ctx.stroke();
+        }
     }
-
     
     
     
