@@ -3395,29 +3395,34 @@ function update() {
         }else if (wave == 73){
           enemies.push(new LiquidEnemy(160, 35, 0.5));
         }else if (wave == 74){
-          enemies.push(new LiquidEnemy(180, 35, 0.6));
-          enemies.push(new LiquidEnemy(180, 35, 0.6));
+          enemies.push(new LiquidEnemy(180, 25, 0.6));
+          enemies.push(new LiquidEnemy(180, 25, 0.6));
         }else if (wave == 75){
-          enemies.push(new LiquidEnemy(200, 35, 0.7));
-          enemies.push(new LiquidEnemy(200, 35, 0.7));
-          enemies.push(new LiquidEnemy(200, 35, 0.7));
+          enemies.push(new LiquidEnemy(200, 25, 0.7));
+          enemies.push(new LiquidEnemy(200, 25, 0.7));
+          enemies.push(new LiquidEnemy(200, 25, 0.7));
         }else if (wave == 76){
-          enemies.push(new LiquidEnemy(240, 35, 0.8));
-          enemies.push(new LiquidEnemy(240, 35, 0.8));
-          enemies.push(new LiquidEnemy(240, 35, 0.8));
-          enemies.push(new ShieldEnemy(240, 35, 0.8, 60, 60));
+          enemies.push(new LiquidEnemy(240, 25, 0.8));
+          enemies.push(new LiquidEnemy(240, 25, 0.8));
+          enemies.push(new LiquidEnemy(240, 25, 0.8));
+          enemies.push(new ShieldEnemy(240, 25, 0.8, 60, 60));
         }else if (wave == 77){
-          enemies.push(new LiquidEnemy(280, 35, 1));
-          enemies.push(new LiquidEnemy(280, 35, 1));
-          enemies.push(new LiquidEnemy(280, 35, 1));
-          enemies.push(new LiquidEnemy(280, 35, 1));
-          enemies.push(new ShieldEnemy(280, 35, 1, 40, 60));
+          enemies.push(new LiquidEnemy(280, 30, 1));
+          enemies.push(new LiquidEnemy(280, 30, 1));
+          enemies.push(new LiquidEnemy(280, 30, 1));
+          enemies.push(new LiquidEnemy(280, 30, 1));
+          enemies.push(new ShieldEnemy(280, 30, 1, 40, 60));
         }else if (wave == 78){
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
+        }else if (wave == 79){
+          enemies.push(new LiquidEnemy(420, 25, 3));
+        }else if (wave == 80){
+          enemies.push(new LiquidEnemy(420, 25, 3.5));
+          enemies.push(new LiquidEnemy(420, 25, 3.5));
         }
         else{
             
