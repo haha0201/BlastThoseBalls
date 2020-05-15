@@ -37,6 +37,7 @@ var attributes = [0, 0, 0, 0, 0, 0, 0];
 var hp = 70,
     maxhp = 70,
     hpregen = 1;
+var canShoot = 1;
 
 var enemies = [];
 var borderballs = [];
@@ -1908,6 +1909,237 @@ SlowerEnemy.prototype.draw = function() {
     this.spawntimer++;
 };
 
+function DisablingEnemy(hp, size, speed, range) {
+    this.maxhp = hp;
+    this.range = range;
+    this.hp = this.maxhp;
+    this.size = size;
+       this.variation = getRandomInt(1, 3);
+   this.x = getRandomInt(1, 3);
+    if (this.x == 1 && x - 100 > this.size * 2){
+      this.x = 100 + this.size;
+      if (this.variation == 1){
+      this.x += getRandomInt(0, 350-this.size)
+      }
+    } else if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    if (this.x == 2 && 600 - x > this.size * 2){
+      this.x = 600-this.size;
+      if (this.variation == 1){
+      this.x -= getRandomInt(0, 350-this.size)
+      }
+    } else if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100 + this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    this.y = getRandomInt(1, 3);
+    if (this.y == 1 && y > this.size * 2){
+      this.y = this.size;
+      if (this.variation == 2){
+      this.y += getRandomInt(0, 250-this.size)
+      }
+    } else if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    if (this.y == 2 && 500 - y > this.size * 2){
+      this.y = 500-this.size;
+      if (this.variation == 2){
+      this.y -= getRandomInt(0, 250-this.size)
+      }
+    } else if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    this.speedx = Math.random() + 0.5;
+    this.speedy = Math.random() + 0.5;
+    this.speed = speed;
+    this.basespeedx = this.speedx;
+    this.basespeedy = this.speedy;
+    this.speedx*=this.speed;
+    this.speedy*=this.speed;
+    this.spawntimer = 0;
+    this.goingright = Math.round(Math.random());
+    this.goingup = Math.round(Math.random());
+    this.delete = 0;
+}
+DisablingEnemy.prototype.draw = function() {
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= 100 + attributes[6]*7 + this.size && attributes[6]>0){
+      this.speedx = this.basespeedx * this.speed * slowingamount;
+      this.speedy = this.basespeedy * this.speed * slowingamount;
+    }
+    if (this.spawntimer > 50){
+    if (this.goingright == 1){
+        this.x+=this.speedx;
+    }
+    else{
+        this.x-=this.speedx;
+    }
+    if (this.goingup == 1){
+        this.y-=this.speedy;
+    }
+    else{
+        this.y+=this.speedy;
+    }
+    }
+    if (this.x>600-this.size){
+        this.goingright = 0;
+    }
+    if (this.y>500-this.size){
+        this.goingup = 1;
+    }
+    if (this.x<100+this.size){
+        this.goingright = 1;
+    }
+    if (this.y<0+this.size){
+        this.goingup = 0;
+    }
+    
+    for (var i = 0; i < bullets.length; i++) {
+         var distx = bullets[i].x - this.x;
+         var disty = bullets[i].y - this.y;
+         var dist = Math.pow(Math.pow(distx, 2) + Math.pow(disty, 2), 0.5);
+         if (dist<this.size + 2){
+             this.hp -= bulletDamage;
+             bullets[i].delete = 1;
+         }
+    }
+    
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
+      hp -= this.speed;
+      if (hp <= 0){
+        hp = 0;
+      }
+    }
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.range){
+      if (this.spawntimer > 50){
+      canShoot = 0;
+      }
+    }
+
+
+    
+    
+    ctx.beginPath();
+    ctx.fillStyle = "rgba(233, 11, 11, 0.3)";
+    ctx.arc(this.x, this.y, this.range, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.fillStyle = "rgb(238, 93, 93)";
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size*8/9, 0, Math.PI * 2 * this.hp/this.maxhp);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size*7/9, 0, Math.PI * 2);
+    ctx.fillStyle = "rgb(238, 93, 93)";
+    ctx.fill();
+    
+    
+    if (this.hp <= 0){
+       this.delete = 1;
+    }
+    this.speedx = this.basespeedx * this.speed;
+    this.speedy = this.basespeedy * this.speed;
+
+    this.spawntimer++;
+};
+
 function ShieldEnemy(hp, size, speed, shieldTime, noShieldTime) {
     this.maxhp = hp;
     this.hp = this.maxhp;
@@ -2160,8 +2392,10 @@ ShieldEnemy.prototype.draw = function() {
 
 canvas.addEventListener("click", function(event){
     if (reloadTimer<0 && autofire%2 != 1){
-    bullets.push(new Bullet(x, y));
-    reloadTimer = bulletReload;
+        if (canShoot == 1){
+            bullets.push(new Bullet(x, y));
+            reloadTimer = bulletReload;
+        }
     }
 });
 canvas.addEventListener("mousemove", function(e){
@@ -2202,8 +2436,10 @@ function update() {
     
     
     if (autofire%2 == 1 &&reloadTimer < 0){
+        if (canShoot == 1){
         reloadTimer = bulletReload;
         bullets.push(new Bullet(x, y));
+        }
     }
 
 
@@ -3232,6 +3468,7 @@ function update() {
     ctx.fill();
     
     time++;
+    canShoot = 1;
 }
 
 
