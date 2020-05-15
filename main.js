@@ -2366,6 +2366,10 @@ function update() {
         time = regularEnemySpawnRate - 1;
         enemies = [];
     }
+    if (keys[189]) {
+        time = regularEnemySpawnRate;
+        enemies = [];
+    }
     if (keys[186]) {
         upgradepoints++;
     }
