@@ -3037,6 +3037,33 @@ function update() {
           }
         }else if (wave == 67){
           enemies.push(new LiquidEnemy(160, 35, 0.5));
+        }else if (wave == 68){
+          enemies.push(new LiquidEnemy(180, 35, 0.6));
+          enemies.push(new LiquidEnemy(180, 35, 0.6));
+        }else if (wave == 69){
+          enemies.push(new LiquidEnemy(200, 35, 0.7));
+          enemies.push(new LiquidEnemy(200, 35, 0.7));
+          enemies.push(new LiquidEnemy(200, 35, 0.7));
+        }else if (wave == 70){
+          enemies.push(new LiquidEnemy(240, 35, 0.8));
+          enemies.push(new LiquidEnemy(240, 35, 0.8));
+          enemies.push(new LiquidEnemy(240, 35, 0.8));
+          enemies.push(new ShieldEnemy(240, 35, 0.8, 60, 60));
+        }else if (wave == 71){
+          enemies.push(new LiquidEnemy(280, 35, 1));
+          enemies.push(new LiquidEnemy(280, 35, 1));
+          enemies.push(new LiquidEnemy(280, 35, 1));
+          enemies.push(new LiquidEnemy(280, 35, 1));
+          enemies.push(new ShieldEnemy(280, 35, 1, 60, 60));
+          enemies.push(new ShieldEnemy(280, 35, 1, 60, 60));
+        }else if (wave == 72){
+          enemies.push(new LiquidEnemy(320, 35, 2));
+          enemies.push(new LiquidEnemy(320, 35, 2));
+          enemies.push(new LiquidEnemy(320, 35, 2));
+          enemies.push(new LiquidEnemy(320, 35, 2));
+          enemies.push(new LiquidEnemy(320, 35, 2));
+          enemies.push(new ShieldEnemy(320, 35, 2, 60, 60));
+          enemies.push(new ShieldEnemy(320, 35, 2, 60, 60));
         }
         else{
             
