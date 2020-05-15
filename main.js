@@ -326,31 +326,31 @@ function RadiatorBullet(bulletx, bullety, bulletDamage, bulletNumber, totalBulle
     this.delete = 0;
     this.bulletDegree = 360 * bulletNumber/totalBullets;
     if (this.bulletDegree == 360){
-      this.dirX = -5;
+      this.dirX = -4;
       this.dirY = 0;
     }
     if(this.bulletDegree == 90){
       this.dirX = 0;
-      this.dirY = 5;
+      this.dirY = 4;
     }
     if(this.bulletDegree == 180){
-      this.dirX = 5;
+      this.dirX = 4;
       this.dirY = 0;
     }
     if(this.bulletDegree == 270){
       this.dirX = 0;
-      this.dirY = -5;
+      this.dirY = -4;
     }
     if (this.bulletDegree%90 != 0){
       if(this.bulletDegree>270 && this.bulletDegree<360){
         this.dirX = ((this.bulletDegree-270)/90)*5
-        this.dirY = -((360-this.bulletDegree)/90)*5
+        this.dirY = ((360-this.bulletDegree)/90)*5
       } else if(this.bulletDegree>0 && this.bulletDegree<90){
-        this.dirX = -((this.bulletDegree-0)/90)*5
+        this.dirX = ((this.bulletDegree-0)/90)*5
         this.dirY = -((90-this.bulletDegree)/90)*5
       } else if(this.bulletDegree>90 && this.bulletDegree<180){
-        this.dirX = ((this.bulletDegree-90)/90)*5
-        this.dirY = ((180-this.bulletDegree)/90)*5
+        this.dirX = -((this.bulletDegree-90)/90)*5
+        this.dirY = -((180-this.bulletDegree)/90)*5
       } else if(this.bulletDegree>180 && this.bulletDegree<270){
         this.dirX = -((this.bulletDegree-180)/90)*5
         this.dirY = ((270-this.bulletDegree)/90)*5
