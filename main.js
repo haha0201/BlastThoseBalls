@@ -813,18 +813,18 @@ ExploderEnemy.prototype.draw = function() {
 
 
     ctx.beginPath();
-    ctx.fillStyle = "lightorange";
+    ctx.fillStyle = "orange";
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size*8/9, 0, Math.PI * 2 * this.hp/this.maxhp);
-    ctx.fillStyle = "darkorange";
+    ctx.fillStyle = "darkgoldenrod";
     ctx.fill();
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size*7/9, 0, Math.PI * 2);
-    ctx.fillStyle = "lightorange";
+    ctx.fillStyle = "orange";
     ctx.fill();
 
 
