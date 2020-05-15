@@ -3146,6 +3146,7 @@ function update() {
           enemies.push(new SlowerEnemy(30, 15, 1, 200));
           enemies.push(new SlowerEnemy(30, 15, 1, 200));
           enemies.push(new SlowerEnemy(30, 15, 1, 200));
+        }
         else{
             
         //If we didn't define any waves, then it goes back to automatic spawning.
