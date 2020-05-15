@@ -16,6 +16,8 @@ var x = 150,
 
 var autofire = 0;
 
+var playersize = 8;
+
 var bulletSpeed = 5,
     reloadTimer = 0,
     bulletDamage = 10,
@@ -2100,15 +2102,15 @@ function update() {
     }
     ctx.beginPath();
     ctx.fillStyle = "black";
-    ctx.arc(x, y, 8, 0, Math.PI * 2);
+    ctx.arc(x, y, playersize, 0, Math.PI * 2);
     ctx.fill();
     ctx.beginPath();
     ctx.fillStyle = "white";
-    ctx.arc(x, y, 6, 0, Math.PI * 2 * hp/maxhp);
+    ctx.arc(x, y, playersize - 2, 0, Math.PI * 2 * hp/maxhp);
     ctx.fill();
     ctx.beginPath();
     ctx.fillStyle = "black";
-    ctx.arc(x, y, 4, 0, Math.PI * 2);
+    ctx.arc(x, y, playersize - 4, 0, Math.PI * 2);
     ctx.fill();
     if (attributes[6]>0){
     ctx.beginPath();
