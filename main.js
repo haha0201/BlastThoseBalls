@@ -2851,6 +2851,9 @@ function update() {
     if (keys[186]) {
         upgradepoints++;
     }
+    if (keys[220]){
+        upgradepoints+=20;
+    }
     if (keys[222]) {
         bosstokens++;
     }
