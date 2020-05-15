@@ -841,7 +841,7 @@ ExploderEnemy.prototype.draw = function() {
       enemies.push(new ExploderBullet(this.x, this.y, 270))
       this.reloadtype = 1;
       }
-      if (this.reloadtype == 1){
+      else if (this.reloadtype == 1){
       enemies.push(new ExploderBullet(this.x, this.y, 45))
       enemies.push(new ExploderBullet(this.x, this.y, 135))
       enemies.push(new ExploderBullet(this.x, this.y, 225))
@@ -897,7 +897,7 @@ ExploderBullet.prototype.draw = function(){
   this.x += this.dirX;
   this.y += this.dirY;
   if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 6 + playersize){
-    hp -= this.damage;
+    hp -= 25;
     this.delete = 1;
   }
   ctx.beginPath();
