@@ -3104,6 +3104,31 @@ function update() {
           enemies.push(new ShieldEnemy(80, 25, 1.2, 60, 40));
           }
           enemies.push(new LiquidEnemy(200, 35, 0.4));
+        }else if (wave == 94){
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(60, 20, 1.2, 60, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 25, 1.2, 40, 40));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(60, 20, 1.2, 40, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 25, 1.2, 60, 40));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(60, 20, 1.2, 60, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 25, 1.2, 40, 40));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(60, 20, 1.2, 40, 60));
+          }
+          for (var i = 1; i--;){
+          enemies.push(new ShieldEnemy(80, 25, 1.2, 60, 40));
+          }
         }
         else{
             
