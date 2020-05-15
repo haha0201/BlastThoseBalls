@@ -2414,6 +2414,9 @@ function update() {
             enemies.push(new SlowerEnemy(30, 15, 1, 200));
             enemies.push(new Enemy(30, 15, 1.9, 200));
         }
+        } else if (wave == 46){
+        //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
+        enemies.push(new RadiatorEnemy(300, 35, 1, 90, 25, 8));
         } else if (wave == 57){
         for (var i = 3; i--;){
             enemies.push(new SniperEnemy(800, 35, 1, 50, 30, 5, 5));
