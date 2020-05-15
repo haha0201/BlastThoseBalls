@@ -2723,7 +2723,7 @@ function update() {
         } else if (wave == 48){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
         enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
-        enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
+        enemies.push(new ExpoderEnemy(300, 35, 1.7, 60));
         enemies.push(new ExploderEnemy(300, 35, 1.7, 60));
         } else if (wave == 49){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
@@ -2745,24 +2745,24 @@ function update() {
         enemies.push(new ExploderEnemy(1500, 40, 1.7, 16));
         } else if (wave == 57){
         for (var i = 3; i--;){
-            enemies.push(new SniperEnemy(800, 35, 1, 50, 30, 5, 5));
+            enemies.push(new SniperEnemy(400, 35, 1, 50, 30, 5, 5));
         }
-        enemies.push(new ExploderEnemy(800, 35, 1, 50));
+        enemies.push(new ExploderEnemy(900, 35, 1, 50));
         } else if (wave == 58){
         for (var i = 3; i--;){
-            enemies.push(new SniperEnemy(800, 35, 1, 40, 30, 5, 5));
+            enemies.push(new SniperEnemy(400, 35, 1, 40, 30, 5, 5));
          
         }
-        enemies.push(new ExploderEnemy(800, 35, 1, 40));
+        enemies.push(new ExploderEnemy(900, 35, 1, 40));
         } else if (wave == 59){
         for (var i = 2; i--;){
-            enemies.push(new SniperEnemy(800, 35, 1, 30, 30, 5, 5));
+            enemies.push(new SniperEnemy(500, 35, 1, 30, 30, 5, 5));
         }
-        enemies.push(new ExploderEnemy(800, 35, 1, 30));
+        enemies.push(new ExploderEnemy(900, 35, 1, 30));
         } else if (wave == 60){
         for (var i = 2; i--;){
-            enemies.push(new SniperEnemy(800, 40, 1.5, 22, 30, 5, 5));
-            enemies.push(new ExploderEnemy(800, 40, 1.5, 22));
+            enemies.push(new SniperEnemy(500, 40, 1.5, 22, 30, 5, 5));
+            enemies.push(new ExploderEnemy(1000, 40, 1.5, 22));
         }
         
         }
