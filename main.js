@@ -2929,7 +2929,7 @@ function update() {
         }
         } else if (wave == 43){
         //hp, size, speed, reload, bulletDamage, bulletSpeed, bulletSize
-        for (var i = 5; i--;){
+        for (var i = 3; i--;){
             enemies.push(new SniperEnemy(70, 25, 1.5, 70, 25, 6, 5));
         }
         } else if (wave == 44){
@@ -3090,7 +3090,9 @@ function update() {
           for (var i = 1; i--;){
           enemies.push(new ShieldEnemy(80, 25, 1.2, 60, 50));
           }
-          enemies.push(new SniperEnemy(Math.pow((wave%30)*40, 0.5)*1.8*multiplier + 25, Math.pow((wave%30)*40, 0.5)*0.2*multiplier + 20, Math.pow((wave%30), 0.5)*0.3*multiplier, 70, 25, 6, 5));
+          for (var i = 1; i--){
+          enemies.push(new SniperEnemy(40, 20, 1.3, 70, 25, 6, 5));
+          }
         }
         else{
             
