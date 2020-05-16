@@ -2626,8 +2626,8 @@ function IceBullet(bulletx, bullety){
     this.x = bulletx;
     this.y = bullety;
     this.delete = 0;
-    this.dirX = 10/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.x-x);
-    this.dirY = 10/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.y-y);
+    this.dirX = 7.5/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.x-x);
+    this.dirY = 7.5/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.y-y);
 }
 
 IceBullet.prototype.draw = function(){
