@@ -3551,8 +3551,9 @@ function update() {
     if (keys[222]) {
         bosstokens++;
     }
-    
-    
+    if (keys[191]) {
+        attributes = [100, 100, 100, 100, 100, 100, 100];
+    }
     
     velY *= friction;
     y += velY;
