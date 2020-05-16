@@ -34,7 +34,7 @@ var needed = [1, 2, 3, 4, 6, 8, 11, 15, 90, 180, 270, 360, 540, 720, 1000, 2000,
 var tokenneeded = [0, 0, 0, 0, 0, 0, 1, 1, 6, 12, 18, 24, 30, 36, 42, 66, 100, 133, 166, 200, 233, 266, 300, 333, 366, 400, 433, 466, 500, 533, 566, 600, 633, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666];
 
 
-
+var powerups = [];
 var attributes = [0, 0, 0, 0, 0, 0, 0];
 
 var hp = 70,
@@ -59,6 +59,47 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+function HealthPowerup() {
+  this.x = getRandomInt(1, 3);
+  this.y = getRandomInt(1, 3);
+  if (this.x == 1){
+    this.x = 350 + getRandomInt(100, 210);
+  } else if (this.x == 2){
+    this.x = 350 - getRandomInt(100, 210);
+  }
+  if (this.y == 1){
+    this.y = 250 + getRandomInt(100, 210);
+  } else if (this.y == 2){
+    this.y = 250 - getRandomInt(100, 210);
+  }
+   this.delete = 0;
+}
+
+HealthPowerup.prototype.draw = function () {
+    ctx.beginPath();
+    ctx.fillStyle = "black";
+    ctx.arc(this.x, this.y, 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "lightgray";
+    ctx.arc(this.x, this.y, 14, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.x-7, this.y-3, 14, 6);
+    ctx.fill();
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.x-3, this.y-7, 6, 14);
+    ctx.fill();
+    
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 15+playersize){
+        hp += 50
+        if (hp > maxhp){
+            hp = maxhp;
+        }
+        this.delete = 1;
+    }
+}
 function SniperBullet(bulletx, bullety, bulletDamage, bulletSpeed, bulletSize, dirX, dirY){
     this.damage = bulletDamage;
     this.speed = bulletSpeed;
@@ -3451,6 +3492,12 @@ function update() {
              enemies.splice(i, 1);
          }
     }
+     for (var i = 0; i < powerups.length; i++) {
+         powerups[i].draw();
+         if(powerups[i].delete == 1){
+             powerups.splice(i, 1);
+         }
+     }
     for (var i = 0; i < borderballs.length; i++) {
          borderballs[i].draw();
      }
@@ -4248,6 +4295,11 @@ function update() {
     time++;
     
     frozentimer ++;
+         
+    i = getRandomInt(1, 1000);
+    if (i == 1){
+        powerups.push(new HealthPowerup());
+    }
     if (frozentimer > 100){
         frozen = false;
     }
