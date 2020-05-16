@@ -3497,6 +3497,7 @@ function update() {
          if(powerups[i].delete == 1){
              powerups.splice(i, 1);
          }
+     }
     for (var i = 0; i < borderballs.length; i++) {
          borderballs[i].draw();
      }
