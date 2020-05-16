@@ -2626,15 +2626,15 @@ function IceBullet(bulletx, bullety){
     this.x = bulletx;
     this.y = bullety;
     this.delete = 0;
-    this.dirX = 6.5/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.x-x);
-    this.dirY = 6.5/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.y-y);
+    this.dirX = 10/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.x-x);
+    this.dirY = 10/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.y-y);
 }
 
 IceBullet.prototype.draw = function(){
     this.x -= this.dirX;
     this.y -= this.dirY;
     if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 7+playersize){
-        if (frozentimer > 70){
+        if (frozentimer > 110){
         frozen = true;
         frozentimer = 0;
         }
@@ -3093,7 +3093,7 @@ function update() {
          borderballs[i].draw();
      }
 
-    
+    if (frozen == false){
     if (keys[38] || keys[87]) {
         if (slowed == 0){
           velY = -speed;
@@ -3122,6 +3122,7 @@ function update() {
         } else if (slowed == 1){
           velX = -speed/2;
         }
+    }
     }
     if (keys[81]) {
         time = regularEnemySpawnRate - 1;
@@ -3168,7 +3169,7 @@ function update() {
       }
     }
     ctx.beginPath();
-    if (frozen == true){
+    if (frozen == false){
     ctx.fillStyle = "black";
     }
     else{
@@ -3181,7 +3182,7 @@ function update() {
     ctx.arc(x, y, playersize - 2, 0, Math.PI * 2 * hp/maxhp);
     ctx.fill();
     ctx.beginPath();
-    if (frozen == true){
+    if (frozen == false){
     ctx.fillStyle = "black";
     }
     else{
@@ -3713,7 +3714,7 @@ function update() {
           enemies.push(new LiquidEnemy(320, 35, 2));
         }else if (wave == 79){
           enemies.push(new LiquidEnemy(500, 35, 1));
-          enemies.push(new IceEnemy(500, 35, 1, 50));
+          enemies.push(new IceEnemy(500, 35, 1, 90));
         }
         else{
             
@@ -3784,7 +3785,7 @@ function update() {
     time++;
     
     frozentimer ++;
-    if (frozentimer > 60){
+    if (frozentimer > 100){
         frozen = false;
     }
     
