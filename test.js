@@ -72,8 +72,34 @@ function HealthPowerup() {
   } else if (this.y == 2){
     this.y = 250 - getRandom(100, 210);
   }
+   this.delete = 0;
 }
 
+HealthPowerup.prototype.draw = function () {
+    ctx.beginPath();
+    ctx.fillStyle = "black";
+    ctx.arc(this.x, this.y, 15, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "lightgray";
+    ctx.arc(this.x, this.y, 14, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.x-7, this.y+3, 14, 6);
+    ctx.fill();
+    ctx.fillStyle = "red";
+    ctx.fillRect(this.x-3, this.y+7, 6, 14);
+    ctx.fill();
+    
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 15+playersize){
+        hp += 50
+        if (hp > maxhp){
+            hp = maxhp;
+        }
+        this.delete = 1;
+    }
+}
 function SniperBullet(bulletx, bullety, bulletDamage, bulletSpeed, bulletSize, dirX, dirY){
     this.damage = bulletDamage;
     this.speed = bulletSpeed;
@@ -3466,6 +3492,11 @@ function update() {
              enemies.splice(i, 1);
          }
     }
+     for (var i = 0; i < powerups.length; i++) {
+         powerups[i].draw();
+         if(powerups[i].delete == 1){
+             powerups.splice(i, 1);
+         }
     for (var i = 0; i < borderballs.length; i++) {
          borderballs[i].draw();
      }
@@ -4263,6 +4294,11 @@ function update() {
     time++;
     
     frozentimer ++;
+         
+    i = getRandomInt(1, 100);
+    if (i == 1){
+        powerups.push(new HealthPowerup());
+    }
     if (frozentimer > 100){
         frozen = false;
     }
