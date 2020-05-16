@@ -2708,7 +2708,7 @@ IcicleEnemy.prototype.draw = function() {
          if (this.y > 500-this.size){
             this.y = 500-this.size;
         }
-         if (this.x < this.size){
+         if (this.y < this.size){
             this.y = this.size;
         }
     }
