@@ -27,6 +27,9 @@ var bulletSpeed = 5,
     chosen = 0,
     slowingamount = 1;
 
+var frozen = false;
+var frozentimer = 0;
+
 var needed = [1, 2, 3, 4, 6, 8, 11, 15, 90, 180, 270, 360, 540, 720, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000, 13000, 14000, 15000, 16000, 17000, 18000, 19000, 20000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000, 21000];
 var tokenneeded = [0, 0, 0, 0, 0, 0, 1, 1, 6, 12, 18, 24, 30, 36, 42, 66, 100, 133, 166, 200, 233, 266, 300, 333, 366, 400, 433, 466, 500, 533, 566, 600, 633, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666, 666];
 
@@ -1450,6 +1453,8 @@ Enemy.prototype.draw = function() {
     this.spawntimer++;
 };
 
+
+
 function LiquidEnemy(hp, size, speed) {
     this.maxhp = hp;
     this.hp = this.maxhp;
@@ -2390,6 +2395,284 @@ ShieldEnemy.prototype.draw = function() {
     this.spawntimer++;
 };
 
+function IceEnemy(hp, size, speed, reload) {
+    this.maxhp = hp;
+    this.hp = this.maxhp;
+    this.size = size;
+        this.variation = getRandomInt(1, 3);
+   this.x = getRandomInt(1, 3);
+    if (this.x == 1 && x - 100 > this.size * 2){
+      this.x = 100 + this.size;
+      if (this.variation == 1){
+      this.x += getRandomInt(0, 350-this.size)
+      }
+    } else if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    if (this.x == 2 && 600 - x > this.size * 2){
+      this.x = 600-this.size;
+      if (this.variation == 1){
+      this.x -= getRandomInt(0, 350-this.size)
+      }
+    } else if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100 + this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    if (this.x == 1 && x - 100 <= this.size * 2){
+      if (600 - x > this.size * 2){
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    if (this.x == 2 && 600 - x <= this.size * 2){
+      if (x - 100 > this.size * 2){
+        this.x = 100+this.size;
+        if (this.variation == 1){
+        this.x += getRandomInt(0, 350-this.size)
+        }
+      } else {
+        this.x = 600-this.size;
+        if (this.variation == 1){
+        this.x -= getRandomInt(0, 350-this.size)
+        }
+      }
+    }
+    this.y = getRandomInt(1, 3);
+    if (this.y == 1 && y > this.size * 2){
+      this.y = this.size;
+      if (this.variation == 2){
+      this.y += getRandomInt(0, 250-this.size)
+      }
+    } else if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    if (this.y == 2 && 500 - y > this.size * 2){
+      this.y = 500-this.size;
+      if (this.variation == 2){
+      this.y -= getRandomInt(0, 250-this.size)
+      }
+    } else if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    if (this.y == 1 && y <= this.size * 2){
+      if (500 - y > this.size * 2){
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    if (this.y == 2 && 500 - y <= this.size * 2){
+      if (y > this.size * 2){
+        this.y = this.size;
+        if (this.variation == 2){
+        this.y += getRandomInt(0, 250-this.size)
+        }
+      } else {
+        this.y = 500-this.size;
+        if (this.variation == 2){
+        this.y -= getRandomInt(0, 250-this.size)
+        }
+      }
+    }
+    this.speedx = Math.random() + 0.5;
+    this.speedy = Math.random() + 0.5;
+    this.speed = speed;
+    this.basespeedx = this.speedx;
+    this.basespeedy = this.speedy;
+    this.speedx*=this.speed;
+    this.speedy*=this.speed;
+    this.goingright = Math.round(Math.random());
+    this.goingup = Math.round(Math.random());
+    this.spawntimer = 0;
+    this.delete = 0;
+    this.reloadtime = 0;
+    this.reload = reload;
+}
+IceEnemy.prototype.draw = function() {
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= 100 + attributes[6]*7 + this.size && attributes[6]>0){
+      this.speedx = this.basespeedx * this.speed * slowingamount;
+      this.speedy = this.basespeedy * this.speed * slowingamount;
+    }
+
+    if (this.spawntimer > 50){
+    if (this.goingright == 1){
+        this.x+=this.speedx;
+    }
+    else{
+        this.x-=this.speedx;
+    }
+    if (this.goingup == 1){
+        this.y-=this.speedy;
+    }
+    else{
+        this.y+=this.speedy;
+    }
+    }
+    if (this.x>600-this.size){
+        this.goingright = 0;
+    }
+    if (this.y>500-this.size){
+        this.goingup = 1;
+    }
+    if (this.x<100+this.size){
+        this.goingright = 1;
+    }
+    if (this.y<0+this.size){
+        this.goingup = 0;
+    }
+
+    for (var i = 0; i < bullets.length; i++) {
+         var distx = bullets[i].x - this.x;
+         var disty = bullets[i].y - this.y;
+         var dist = Math.pow(Math.pow(distx, 2) + Math.pow(disty, 2), 0.5);
+         if (dist<this.size + 2){
+             this.hp -= bulletDamage;
+             bullets[i].delete = 1;
+         }
+    }
+
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
+      hp -= this.speed;
+      if (hp <= 0){
+        hp = 0;
+      }
+    }
+
+
+    ctx.beginPath();
+    ctx.fillStyle = "darkviolet";
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size*8/9, 0, Math.PI * 2 * this.hp/this.maxhp);
+    ctx.fillStyle = "dodgerblue";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size*7/9, 0, Math.PI * 2);
+    ctx.fillStyle = "darkviolet";
+    ctx.fill();
+
+
+    if (this.hp <= 0){
+       this.delete = 1;
+    }
+
+    this.speedx = this.basespeedx * this.speed;
+    this.speedy = this.basespeedy * this.speed;
+
+    if (this.reloadtime>this.reload){
+        this.reloadtime = 0;
+        enemies.push(new IceBullet(this.x, this.y))
+    }
+    this.spawntimer++;
+    this.reloadtime ++;
+};
+
+function IceBullet(bulletx, bullety){
+    this.x = bulletx;
+    this.y = bullety;
+    this.delete = 0;
+    this.dirX = 6.5/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.x-x);
+    this.dirY = 6.5/Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2))*(this.y-y);
+}
+
+IceBullet.prototype.draw = function(){
+    this.x -= this.dirX;
+    this.y -= this.dirY;
+    if (Math.sqrt(Math.pow((this.x-x), 2) + Math.pow((this.y-y), 2)) <= 7+playersize){
+        if (frozentimer > 70){
+        frozen = true;
+        frozentimer = 0;
+        }
+        this.delete = 1;
+    }
+    if (this.x > 600 || this.x < 100 || this.y > 500 || this.y < 0){    
+        this.delete = 1;
+    }
+
+    ctx.beginPath();
+    ctx.fillStyle = "darkviolet";
+    ctx.arc(this.x, this.y, 7, 0, Math.PI * 2);
+    ctx.fill();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 canvas.addEventListener("click", function(event){
     if (reloadTimer<0 && autofire%2 != 1){
         if (canShoot == 1){
@@ -2885,7 +3168,12 @@ function update() {
       }
     }
     ctx.beginPath();
+    if (frozen == true){
     ctx.fillStyle = "black";
+    }
+    else{
+    ctx.fillStyle = "darkviolet";
+    }
     ctx.arc(x, y, playersize, 0, Math.PI * 2);
     ctx.fill();
     ctx.beginPath();
@@ -2893,7 +3181,12 @@ function update() {
     ctx.arc(x, y, playersize - 2, 0, Math.PI * 2 * hp/maxhp);
     ctx.fill();
     ctx.beginPath();
+    if (frozen == true){
     ctx.fillStyle = "black";
+    }
+    else{
+    ctx.fillStyle = "darkviolet";
+    }
     ctx.arc(x, y, playersize - 4, 0, Math.PI * 2);
     ctx.fill();
     if (attributes[6]>0){
@@ -3419,10 +3712,8 @@ function update() {
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
         }else if (wave == 79){
-          enemies.push(new LiquidEnemy(420, 25, 3));
-        }else if (wave == 80){
-          enemies.push(new LiquidEnemy(420, 25, 3.5));
-          enemies.push(new LiquidEnemy(420, 25, 3.5));
+          enemies.push(new LiquidEnemy(500, 35, 1));
+          enemies.push(new IceEnemy(500, 35, 1, 50));
         }
         else{
             
@@ -3491,6 +3782,12 @@ function update() {
     ctx.fill();
     
     time++;
+    
+    frozentimer ++;
+    if (frozentimer > 60){
+        frozen = false;
+    }
+    
     canShoot = 1;
 }
 
