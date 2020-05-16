@@ -3862,7 +3862,6 @@ function update() {
           enemies.push(new LiquidEnemy(150, 25, 0.6));
           enemies.push(new SniperEnemy(150, 25, 0.5, 70, 25, 6, 5));
           enemies.push(new ExploderEnemy(150, 45, 0.5, 50));
-          enemies.push(new SlowerEnemy(150, 25, 0.5, 200));
         } else if (wave == 84){
           for (var i = 6; i--;){
               enemies.push(new IcicleEnemy(70, 15, 5.5, 60));
