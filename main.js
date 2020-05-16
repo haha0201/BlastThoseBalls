@@ -3890,6 +3890,30 @@ function update() {
           enemies.push(new IceEnemy(200, 38, 1.5, 115));
           enemies.push(new IceEnemy(220, 39, 1.3, 115));
           enemies.push(new IceEnemy(240, 40, 1.1, 115));
+        }else if (wave == 87){
+          enemies.push(new IceEnemy(180, 20, 3, 115));
+          enemies.push(new IceEnemy(180, 20, 3, 115));
+          for (var i = 10; i--;){
+              enemies.push(new IcicleEnemy(60, 25, 3.5, 60));
+          }
+        }else if (wave == 88){
+          enemies.push(new IceEnemy(180, 20, 3, 115));
+          enemies.push(new IceEnemy(180, 20, 3, 115));
+          for (var i = 7; i--;){
+              enemies.push(new IcicleEnemy(60, 25, 3.5, 60));
+              enemies.push(new LiquidEnemy(60, 25, 1));
+          }
+        }else if (wave == 89){
+          enemies.push(new IceEnemy(180, 20, 3, 115));
+          enemies.push(new IceEnemy(180, 20, 3, 115));
+          for (var i = 7; i--;){
+              enemies.push(new IcicleEnemy(60, 25, 3.5, 60));
+              enemies.push(new LiquidEnemy(60, 25, 1));
+          }
+          enemies.push(new SlowerEnemy(200, 25, 1, 50));
+          enemies.push(new SlowerEnemy(200, 25, 1, 50));
+          enemies.push(new SniperEnemy(150, 25, 0.5, 70, 25, 6, 5));
+          enemies.push(new ExploderEnemy(150, 45, 0.5, 50));
         }
         else{
             
