@@ -3864,14 +3864,24 @@ function update() {
           enemies.push(new ExploderEnemy(150, 45, 0.5, 50));
           enemies.push(new SlowerEnemy(150, 25, 0.5, 200));
         } else if (wave == 84){
-          for (var i = 30; i--;){
-              enemies.push(new IcicleEnemy(200, 25, 3.5, 60));
+          for (var i = 6; i--;){
+              enemies.push(new IcicleEnemy(70, 15, 5.5, 60));
+          }
+          for (var i = 6; i--;){
+              enemies.push(new IcicleEnemy(90, 20, 4.5, 60));
+          }
+          for (var i = 6; i--;){
+              enemies.push(new IcicleEnemy(100, 25, 3.5, 60));
+          }
+          for (var i = 6; i--;){
+              enemies.push(new IcicleEnemy(110, 30, 2.5, 60));
+          }
+          for (var i = 6; i--;){
+              enemies.push(new IcicleEnemy(130, 35, 1.5, 60));
           }
         } else if (wave == 85){
-          enemies.push(new IceEnemy(150, 25, 2, 115));
           enemies.push(new IceEnemy(200, 35, 1.5, 115));
-          
-         
+          enemies.push(new IceEnemy(200, 35, 1.5, 115));
         }
         else{
             
