@@ -4296,7 +4296,7 @@ function update() {
     
     frozentimer ++;
          
-    i = getRandomInt(1, 1000);
+    i = getRandomInt(1, 3000);
     if (i == 1){
         powerups.push(new HealthPowerup());
     }
