@@ -1,4 +1,4 @@
-# no bro, this is easy, give each powerup a "rarity" value, and do random ints and 
+# no listen, im not adding homing bullets or whatever shoot two waves of bullets means. These powerups should be easy to draw on such a small area, for example, the medkit is just two red rectangles. For homing bullets and other of your ridiculous ideas, theres no way to accurately represent it on a 500 pixel surface
 # Common: 45%
 # Uncommon: 30%
 # Rare: 12%
