@@ -3819,12 +3819,15 @@ function update() {
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
         }else if (wave == 79){
-          enemies.push(new IceEnemy(200, 35, 1, 115));
-          enemies.push(new IcicleEnemy(200, 35, 2, 60));
+          enemies.push(new IcicleEnemy(150, 25, 2, 90));
         }else if (wave == 80){
-          enemies.push(new IceEnemy(250, 35, 1, 115));
-          enemies.push(new IceEnemy(250, 35, 1, 115));
-        }else if (wave == 81){
+          enemies.push(new IcicleEnemy(150, 25, 3, 90));
+          enemies.push(new IcicleEnemy(150, 25, 3, 90));
+          enemies.push(new IcicleEnemy(150, 25, 3, 90));
+          enemies.push(new IcicleEnemy(150, 25, 3, 90));
+          enemies.push(new IcicleEnemy(150, 25, 3, 90));
+          enemies.push(new IcicleEnemy(150, 25, 3, 90));
+        }else if (wave == 85){
           enemies.push(new IceEnemy(150, 25, 2, 115));
           enemies.push(new IceEnemy(200, 35, 1.5, 115));
           enemies.push(new IceEnemy(250, 45, 1, 115));
