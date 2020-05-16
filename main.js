@@ -2598,7 +2598,7 @@ IceEnemy.prototype.draw = function() {
 
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size*8/9, 0, Math.PI * 2 * this.hp/this.maxhp);
-    ctx.fillStyle = "dodgerblue";
+    ctx.fillStyle = "rgb(35, 25, 96)";
     ctx.fill();
 
     ctx.beginPath();
@@ -2732,7 +2732,7 @@ IcicleEnemy.prototype.draw = function() {
     
 
     ctx.beginPath();
-    ctx.fillStyle = "darkcyan";
+    ctx.fillStyle = "rgb(80, 63, 191)";
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
     
@@ -2743,7 +2743,7 @@ IcicleEnemy.prototype.draw = function() {
     
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size*7/9, 0, Math.PI * 2);
-    ctx.fillStyle = "darkcyan";
+    ctx.fillStyle = "rgb(80, 63, 191)";
     ctx.fill();
     
     
