@@ -2681,7 +2681,7 @@ IcicleEnemy.prototype.draw = function() {
       this.speed = this.basespeed * slowingamount;
     }
     
-    if (this.spawntimer > 50 || this.delaytimer > this.delay){
+    if (this.spawntimer > 50 && this.delaytimer > this.delay){
         if (this.direction == 1){
             this.y += this.speed * this.switch
         }
@@ -2697,7 +2697,7 @@ IcicleEnemy.prototype.draw = function() {
     }
     
     if (this.x > 600-this.size || this.x < 100+this.size || this.y > 500-this.size || this.y < this.size){
-        this.switch *= -1
+        this.switch *= -1;
         this.delaytimer = 0;
         if (this.x > 600-this.size){
             this.x = 600-this.size;
