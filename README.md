@@ -1,1 +1,5 @@
-# theres no point in all the rarity things. we arent having some OP drop that gives you 200HP and adjusts max hp accordingly, powerups should be a **small** boost that players can use to their advantage in a pinch. Not some overpowered crap that automatically wins you the wave, and homing bullets should not be a thing. It would honestly be better if you increase bullet size, bc its pretty much the same thing except bullet size is much better. idek what wave of bullets means lmao. But anyways, my point is that powerups should be small boosts and shouldnt be OP, and idc how rare it is. Besides, by adding  OP powerups that have extremely rare spawnrates, that makes the game  a lot more luck based too, and if theres 2 ppl with the same skill, one person could get to like 200 with lucky powerup spawns, while the other could maybe die on 120.
+# fine, then the rarities only do a little bit of difference, like instead of 30, 50, 80, 120, 200, more like 30, 35, 40, 45, 50
+
+# and wave of bullets means like instead of shooting 1 bullet, you shoot 2
+
+# and sure, bullet size, yea
