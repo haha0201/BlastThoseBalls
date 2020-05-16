@@ -3881,6 +3881,15 @@ function update() {
         } else if (wave == 85){
           enemies.push(new IceEnemy(200, 35, 1.5, 115));
           enemies.push(new IceEnemy(200, 35, 1.5, 115));
+        }else if (wave == 86){
+          enemies.push(new IceEnemy(100, 33, 2.5, 115));
+          enemies.push(new IceEnemy(120, 35, 2.3, 115));
+          enemies.push(new IceEnemy(140, 35, 2.1, 115));
+          enemies.push(new IceEnemy(160, 36, 1.9, 115));
+          enemies.push(new IceEnemy(180, 37, 1.7, 115));
+          enemies.push(new IceEnemy(200, 38, 1.5, 115));
+          enemies.push(new IceEnemy(220, 39, 1.3, 115));
+          enemies.push(new IceEnemy(240, 40, 1.1, 115));
         }
         else{
             
