@@ -1,3 +1,8 @@
+# lol what the hell, we arent having this many powerups, too insane, no homing bullets or waves of bullets
+# or anything like that. No one is gonna remember what each powerup does, since I only have a 500 pixel space to draw
+# the art for the powerup. We could have reload/dmg buffs, a temp maxhp buff, and dmg all enemies on screen powerup, but not
+# like 5 different rarities or that crap. Just each one will have a different spawnrate
+
 # there should be different powerup rarities which give different amounts of buffs, and as you go on rarer ones get more common and common ones get more rare
 # also Buffs: 
 
