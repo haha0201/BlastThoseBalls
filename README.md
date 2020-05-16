@@ -1,1 +1,1 @@
-# Tronsi get your ass on discord
+# Lol sorry not now, why?
