@@ -2650,6 +2650,112 @@ IceBullet.prototype.draw = function(){
     ctx.fill();
 }
 
+function IcicleEnemy(hp, size, speed, delay) {
+    this.maxhp = hp;
+    this.hp = this.maxhp;
+    this.size = size;
+    this.speed = speed;
+    this.delay = delay;
+    this.switch = 1;
+    this.delaytimer = 0;
+    this.basespeed = this.speed;
+    this.direction = getRandomInt(1, 5);
+    if (this.direction == 1){
+        this.x = getRandomInt(125, 575);
+        this.y = this.size;
+    } else if (this.direction == 2){
+        this.x = 600-this.size;
+        this.y = getRandomInt(25, 475);
+    } else if (this.direction == 3){
+        this.x = getRandomInt(125, 575);
+        this.y = 500-this.size;   
+    } else if (this.direction == 4){
+        this.x = 100+this.size;
+        this.y = getRandomInt(25, 475)
+    }
+    this.spawntimer = 0;
+    this.delete = 0;
+}
+IcicleEnemy.prototype.draw = function() {
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= 100 + attributes[6]*7 + this.size && attributes[6]>0){
+      this.speed = this.basespeed * slowingamount;
+    }
+    
+    if (this.spawntimer > 50 || this.delaytimer > this.delay){
+        if (this.direction == 1){
+            this.y += this.speed * this.switch
+        }
+        if (this.direction == 2){
+            this.x += this.speed * this.switch
+        }
+        if (this.direction == 3){
+            this.y += -this.speed * this.switch
+        }
+        if (this.direction == 4){
+            this.x += -this.speed * this.switch
+        }
+    }
+    
+    if (this.x > 600-this.size || this.x < 100+this.size || this.y > 500-this.size || this.y < this.size){
+        this.switch *= -1
+        this.delaytimer = 0;
+        if (this.x > 600-this.size){
+            this.x = 600-this.size;
+        }
+         if (this.x < 100+this.size){
+            this.x = 100+this.size;
+        }
+         if (this.y > 500-this.size){
+            this.y = 500-this.size;
+        }
+         if (this.x < this.size){
+            this.y = this.size;
+        }
+    }
+    
+    for (var i = 0; i < bullets.length; i++) {
+         var distx = bullets[i].x - this.x;
+         var disty = bullets[i].y - this.y;
+         var dist = Math.pow(Math.pow(distx, 2) + Math.pow(disty, 2), 0.5);
+         if (dist<this.size + 2){
+             this.hp -= bulletDamage;
+             bullets[i].delete = 1;
+         }
+    }
+    
+    if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.size + playersize){
+      hp -= this.speed;
+      if (hp <= 0){
+        hp = 0;
+      }
+    }
+    
+
+    ctx.beginPath();
+    ctx.fillStyle = "darkcyan";
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size*8/9, 0, Math.PI * 2 * this.hp/this.maxhp);
+    ctx.fillStyle = "cyan";
+    ctx.fill();
+    
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size*7/9, 0, Math.PI * 2);
+    ctx.fillStyle = "darkcyan";
+    ctx.fill();
+    
+    
+    if (this.hp <= 0){
+       this.delete = 1;
+    }
+    
+    this.speed = this.basespeed;
+
+    this.spawntimer++;
+    this.delaytimer++;
+};
 
 
 
@@ -3713,7 +3819,8 @@ function update() {
           enemies.push(new LiquidEnemy(320, 35, 2));
           enemies.push(new LiquidEnemy(320, 35, 2));
         }else if (wave == 79){
-          enemies.push(new IceEnemy(500, 35, 1, 115));
+          enemies.push(new IceEnemy(200, 35, 1, 115));
+          enemies.push(new IcicleEnemy(200, 35, 2, 60));
         }else if (wave == 80){
           enemies.push(new IceEnemy(250, 35, 1, 115));
           enemies.push(new IceEnemy(250, 35, 1, 115));
