@@ -3930,7 +3930,7 @@ function update() {
           enemies.push(new ShieldEnemy(100, 35, 1.2, 60, 60));
           }
           for (var i = 1; i--;){
-          enemies.push(new DelayShieldEnemy(100, 35, 1.2, 60, 60, 30));
+          enemies.push(new ShieldEnemy(100, 35, 1.2, 60, 60));
           }
         } else if (wave == 63){
           for (var i = 3; i--;){
