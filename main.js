@@ -4259,6 +4259,18 @@ function update() {
           enemies.push(new DisablingEnemy(110, 35, 1.1, 200)); 
           enemies.push(new DisablingEnemy(110, 35, 1, 200)); 
 
+        }else if (wave == 97){
+          for (var i = 20; i--;){
+              enemies.push(new Enemy(50, 25, 2.6));
+          }
+        }else if (wave == 98){
+          for (var i = 20; i--;){
+              enemies.push(new Enemy(60, 50, 1.5));
+          }
+        }else if (wave == 99){
+          for (var i = 20; i--;){
+              enemies.push(new Enemy(70, 75, 1));
+          }
         }
         else{
             
