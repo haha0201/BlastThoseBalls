@@ -4230,6 +4230,18 @@ function update() {
           enemies.push(new ExploderEnemy(100, 45, 0.5, 120));
         }else if (wave == 91){
           enemies.push(new DisablingEnemy(100, 45, 0.5, 150));
+        }else if (wave == 92){
+          enemies.push(new DisablingEnemy(400, 45, 0.6, 150));
+          enemies.push(new DisablingEnemy(400, 45, 0.6, 150)); 
+        }else if (wave == 93){
+          enemies.push(new DisablingEnemy(200, 25, 1.2, 130));
+          enemies.push(new DisablingEnemy(300, 35, 0.8, 150));
+          enemies.push(new DisablingEnemy(400, 45, 0.4, 170));  
+        }else if (wave == 94){
+          for (var i = 16; i--;){
+              enemies.push(new IcicleEnemy(75, 15, 2, 70));
+          }
+          enemies.push(new DisablingEnemy(300, 35, 0.8, 150)); 
         }
         else{
             
