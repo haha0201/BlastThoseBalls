@@ -4260,20 +4260,24 @@ function update() {
           enemies.push(new DisablingEnemy(110, 35, 1, 200)); 
 
         }else if (wave == 97){
-          for (var i = 20; i--;){
+          for (var i = 15; i--;){
               enemies.push(new Enemy(70, 20, 2.9));
           }
         }else if (wave == 98){
-          for (var i = 20; i--;){
+          for (var i = 10; i--;){
               enemies.push(new Enemy(80, 50, 1.5));
           }
         }else if (wave == 99){
-          for (var i = 20; i--;){
+          for (var i = 6; i--;){
               enemies.push(new Enemy(90, 75, 1));
           }
         }else if (wave == 100){
           for (var i = 35; i--;){
-              enemies.push(new Enemy(60, 5, 2));
+              enemies.push(new Enemy(60, 15, 2.5));
+          }
+        }else if (wave == 101){
+          for (var i = 20; i--;){
+              enemies.push(new Enemy(60, 20, 3.5));
           }
         }
         else{
