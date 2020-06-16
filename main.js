@@ -4244,22 +4244,20 @@ function update() {
           enemies.push(new DisablingEnemy(300, 35, 0.8, 150)); 
         }else if (wave == 95){
           for (var i = 16; i--;){
-              enemies.push(new Enemy(25, 15, 2.5, 70));
+              enemies.push(new Enemy(5, 15, 2.5, 70));
           }
-          enemies.push(new DisablingEnemy(150, 25, 1.3, 150)); 
-          enemies.push(new DisablingEnemy(150, 25, 1.3, 150)); 
-          enemies.push(new DisablingEnemy(150, 25, 1.3, 150)); 
-          enemies.push(new DisablingEnemy(150, 25, 1.3, 150)); 
+          enemies.push(new DisablingEnemy(50, 25, 1.3, 150)); 
+          enemies.push(new DisablingEnemy(50, 25, 1.3, 150)); 
+          enemies.push(new DisablingEnemy(50, 25, 1.3, 150)); 
+          enemies.push(new DisablingEnemy(50, 25, 1.3, 150)); 
           
         }else if (wave == 96){
-          enemies.push(new DisablingEnemy(130, 25, 1.9, 150)); 
-          enemies.push(new DisablingEnemy(130, 25, 1.8, 150)); 
-          enemies.push(new DisablingEnemy(130, 25, 1.7, 150)); 
-          enemies.push(new DisablingEnemy(160, 30, 1.5, 170)); 
-          enemies.push(new DisablingEnemy(160, 30, 1.4, 170)); 
-          enemies.push(new DisablingEnemy(160, 30, 1.3, 170)); 
-          enemies.push(new DisablingEnemy(180, 35, 1.1, 200)); 
-          enemies.push(new DisablingEnemy(180, 35, 1, 200)); 
+          enemies.push(new DisablingEnemy(60, 25, 1.9, 150)); 
+          enemies.push(new DisablingEnemy(60, 25, 1.8, 150)); 
+          enemies.push(new DisablingEnemy(80, 30, 1.5, 170)); 
+          enemies.push(new DisablingEnemy(80, 30, 1.4, 170)); 
+          enemies.push(new DisablingEnemy(110, 35, 1.1, 200)); 
+          enemies.push(new DisablingEnemy(110, 35, 1, 200)); 
 
         }
         else{
