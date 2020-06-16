@@ -15,6 +15,7 @@ var x = 150,
     clicknumberkey = false;
 
 var autofire = 0;
+var intheaura = 0;
 
 var playersize = 8;
 
@@ -2150,6 +2151,7 @@ DisablingEnemy.prototype.draw = function() {
     if (Math.sqrt(Math.pow(this.x-x ,2) + Math.pow(this.y-y, 2)) <= this.range){
       if (this.spawntimer > 50){
       canShoot = 0;
+      intheaura = 1;
       }
     }
 
@@ -4306,8 +4308,8 @@ function update() {
     if (frozentimer > 100){
         frozen = false;
     }
-    
-    canShoot = 1;
+    if (intheaura == 0){canShoot = 1;}
+    intheaura = 0;
 }
 
 
