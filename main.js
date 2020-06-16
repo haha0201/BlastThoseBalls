@@ -4226,6 +4226,8 @@ function update() {
           enemies.push(new SlowerEnemy(100, 25, 1, 100));
           enemies.push(new SniperEnemy(100, 25, 0.5, 120, 25, 6, 5));
           enemies.push(new ExploderEnemy(100, 45, 0.5, 120));
+        }else if (wave == 91){
+          enemies.push(new DisablingEnemy(100, 45, 0.5, 150));
         }
         else{
             
